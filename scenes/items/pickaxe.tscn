@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccmgan0d6i5ij"]
+
+[ext_resource type="Texture2D" uid="uid://m0wag447isgv" path="res://assets/items/axe.png" id="1_1fwfi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fl4i1"]
+radius = 1.0
+
+[sub_resource type="Animation" id="Animation_csvu3"]
+resource_name = "swing"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_daa5d"]
+_data = {
+"swing": SubResource("Animation_csvu3")
+}
+
+[node name="Pickaxe" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1fwfi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 0)
+shape = SubResource("CircleShape2D_fl4i1")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_daa5d")
+}

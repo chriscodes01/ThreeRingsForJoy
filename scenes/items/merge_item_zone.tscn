@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvjpthgfbocss"]
+
+[sub_resource type="GDScript" id="GDScript_cgv40"]
+script/source = "extends Area2D
+@onready var game_manager = %GameManager
+
+var itemObj = {
+	\"level\": \"Level1\",
+	\"key\": \"0\"
+}
+
+func _on_body_entered(_body):
+	game_manager.increment_mergeItem(itemObj)
+	queue_free()
+"
+
+[node name="MergeItemZone" type="Area2D"]
+script = SubResource("GDScript_cgv40")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 class_name PlatformerController2D
-
-@export var README: String = "IMPORTANT: MAKE SURE TO ASSIGN 'left' 'right' 'jump' 'dash' 'up' 'down' 'roll' 'latch' 'run' 'twirl' in the project settings input map. Usage tips. 1. Hover over each toggle and variable to read what it does and to make sure nothing bugs. 2. Animations are very primitive. To make full use of your custom art, you may want to slightly change the code for the animations"
+@onready var game_manager = %GameManager
+@export var README: String = "IMPORTANT: MAKE SURE TO ASSIGN 'left' 'right' 'jump' 'dash' 'up' 'down' 'roll' 'latch' 'run' in the project settings input map. Usage tips. 1. Hover over each toggle and variable to read what it does and to make sure nothing bugs. 2. Animations are very primitive. To make full use of your custom art, you may want to slightly change the code for the animations"
 #INFO READEME 
-#IMPORTANT: MAKE SURE TO ASSIGN 'left' 'right' 'jump' 'dash' 'up' 'down' 'roll' 'latch' 'run' 'twirl' in the project settings input map. THIS IS REQUIRED
+#IMPORTANT: MAKE SURE TO ASSIGN 'left' 'right' 'jump' 'dash' 'up' 'down' 'roll' 'latch' 'run' in the project settings input map. THIS IS REQUIRED
 #Usage tips. 
 #1. Hover over each toggle and variable to read what it does and to make sure nothing bugs. 
 #2. Animations are very primitive. To make full use of your custom art, you may want to slightly change the code for the animations
@@ -177,7 +177,7 @@ var latchHold
 var dashTap
 var rollTap
 var downTap
-var twirlTap
+var openInventory
 
 func _ready():
 	wasMovingR = true
@@ -268,9 +268,11 @@ func _process(_delta):
 	if run and idle and !dashing and !crouching and !walk:
 		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall():
 			anim.speed_scale = abs(velocity.x / 150)
+			#print(str(anim.speed_scale))
 			anim.play("run")
 		elif abs(velocity.x) < 0.1 and is_on_floor():
 			anim.speed_scale = 1
+			#print(str(anim.speed_scale))
 			anim.play("idle")
 	elif run and idle and walk and !dashing and !crouching:
 		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall():
@@ -281,6 +283,7 @@ func _process(_delta):
 				anim.play("run")
 		elif abs(velocity.x) < 0.1 and is_on_floor():
 			anim.speed_scale = 1
+			#print(str(anim.speed_scale))
 			anim.play("idle")
 		
 	#jump
@@ -326,7 +329,7 @@ func _physics_process(delta):
 	if !dset:
 		gdelta = delta
 		dset = true
-	#INFO Input Detectio. Define your inputs from the project settings here.
+	#INFO Input Detection. Define your inputs from the project settings here.
 	leftHold = Input.is_action_pressed("left")
 	rightHold = Input.is_action_pressed("right")
 	upHold = Input.is_action_pressed("up")
@@ -342,7 +345,11 @@ func _physics_process(delta):
 	dashTap = Input.is_action_just_pressed("dash")
 	rollTap = Input.is_action_just_pressed("roll")
 	downTap = Input.is_action_just_pressed("down")
-	twirlTap = Input.is_action_just_pressed("twirl")
+	openInventory = Input.is_action_just_pressed("openInventory")
+	
+	#INFO UI
+	if (openInventory):
+		game_manager.checkInventory()
 	
 	
 	#INFO Left and Right Movement
@@ -544,7 +551,7 @@ func _physics_process(delta):
 	
 	if twoWayDashHorizontal and dashTap and dashCount > 0 and !rolling:
 		var dTime = 0.0625 * dashLength
-		if wasPressingR and !(upHold or downHold):
+		if rightHold and !(upHold or downHold):
 			velocity.y = 0
 			velocity.x = dashMagnitude
 			_pauseGravity(dTime)
@@ -552,7 +559,7 @@ func _physics_process(delta):
 			dashCount += -1
 			movementInputMonitoring = Vector2(false, false)
 			_inputPauseReset(dTime)
-		elif !(upHold or downHold):
+		elif leftHold and !(upHold or downHold):
 			velocity.y = 0
 			velocity.x = -dashMagnitude
 			_pauseGravity(dTime)
