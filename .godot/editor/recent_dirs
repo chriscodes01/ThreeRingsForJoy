@@ -1,10 +1,14 @@
+res://scripts/UI
+res://scripts/player
+res://scenes/UI
+res://scenes/environment
+res://scripts/environment
+res://scripts
+res://assets/player
 res://scripts/items
 res://scenes/items
 res://assets/items
-res://scripts
 res://
-res://scripts/player
 C:/Users/Chris/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Visual Studio Code
-res://assets/player
 res://scenes/player
 res://scenes

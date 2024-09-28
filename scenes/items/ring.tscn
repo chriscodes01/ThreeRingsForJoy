@@ -85,6 +85,7 @@ animations = [{
 radius = 6.0
 
 [node name="Ring" type="Area2D"]
+collision_mask = 2147483650
 script = ExtResource("1_4sad2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

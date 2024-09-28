@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://bd2fawo1nn786"]
+
+[ext_resource type="Script" path="res://scripts/items/bone.gd" id="1_nnyy7"]
+[ext_resource type="Texture2D" uid="uid://d4a1r1wofghtm" path="res://assets/items/fruit.png" id="1_xrlmm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp01s"]
+atlas = ExtResource("1_xrlmm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsajc"]
+atlas = ExtResource("1_xrlmm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rnwv"]
+atlas = ExtResource("1_xrlmm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnr23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp01s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsajc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rnwv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x2m7s"]
+radius = 7.0
+
+[node name="Bone" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_nnyy7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_cnr23")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x2m7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

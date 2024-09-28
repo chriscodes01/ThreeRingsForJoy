@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://2awyr1wpho11"]
 
-[ext_resource type="Script" path="res://scripts/player/dizzy.gd" id="1_ai412"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_2fa7d"]
 [ext_resource type="Texture2D" uid="uid://vkusfkra8uyh" path="res://assets/player/knight.png" id="1_w5s12"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dnnyi"]
@@ -207,7 +207,7 @@ radius = 7.0
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
 collision_layer = 2
 floor_stop_on_slope = false
-script = ExtResource("1_ai412")
+script = ExtResource("1_2fa7d")
 PlayerSprite = NodePath("AnimatedSprite2D")
 PlayerCollider = NodePath("CollisionShape2D")
 directionalSnap = true

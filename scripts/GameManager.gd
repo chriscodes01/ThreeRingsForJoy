@@ -1,19 +1,15 @@
-extends Node
-var MTL = preload("res://scripts/items/MergeTreeList.gd").new()
-var MIH = preload("res://scripts/items/MergeItemsHelper.gd").new()
+extends Node2D
+
+var ringScene = preload("res://scenes/items/ring.tscn")
 #var rng = RandomNumberGenerator.new()
 var MERGEBY = 3
-var rightTap
-
-func _ready():
-	MIH.spawn()
 
 func checkInventory():
-	print(MTL.list)
+	print(MERGETREELIST.list)
 
 func increment_mergeItem(itemObj):
 	print("ItemKey: " + itemObj.key + "; ItemLevel: " + str(itemObj.level))
-	var levelObj = MTL.list[itemObj.level]
+	var levelObj = MERGETREELIST.list[itemObj.level]
 	var item = levelObj[itemObj.key]
 	var levelUp = item["levelUp"]
 	var childKey = item["childKey"]
@@ -47,7 +43,7 @@ func determineNextMergePath(item, levelUp, childKey, level):
 		pass
 
 func mergeToNextLevel(nextLevel):
-	var levelObj = MTL.list[nextLevel]
+	var levelObj = MERGETREELIST.list[nextLevel]
 	print("Merging to Next Level...")
 	var baseItemList = []
 	for itemKey in levelObj:

@@ -92,6 +92,7 @@ animations = [{
 radius = 6.0
 
 [node name="Pup" type="Area2D"]
+collision_mask = 2147483650
 script = ExtResource("1_qk8i4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
