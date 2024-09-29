@@ -4,10 +4,9 @@ extends Node2D
 @onready var spawned_items = $SpawnedItems
 
 var rng = RandomNumberGenerator.new()
-const MAPKEY = "0"
+const MAP = "Tutorial"
 const XAXISBUFFER = 25
 const YAXISBUFFER = 40
-#var paused = false
 
 func _ready():
 	spawnFromMergeMap()
@@ -43,7 +42,7 @@ func togglePause():
 		pause_menu.show()
 
 func spawnFromMergeMap():
-	var map = MERGEMAP.map[MAPKEY]
+	var map = MERGEMAP.maps[MAP]
 	#var mapName = map["name"]
 	var mergeItems = map["mergeItems"]
 	for item in mergeItems:

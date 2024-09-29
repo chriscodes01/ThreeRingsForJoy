@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bby6ya2gob0jn"]
 
-[ext_resource type="Script" path="res://scripts/items/Collar.gd" id="1_2kn5r"]
+[ext_resource type="Script" path="res://scripts/items/collar.gd" id="1_07xm5"]
 [ext_resource type="Texture2D" uid="uid://b0gowj2hlayfs" path="res://assets/items/coin.png" id="2_r3swj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qltux"]
@@ -93,7 +93,7 @@ radius = 5.0
 
 [node name="collar" type="Area2D"]
 collision_mask = 2147483650
-script = ExtResource("1_2kn5r")
+script = ExtResource("1_07xm5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qvhvv")
