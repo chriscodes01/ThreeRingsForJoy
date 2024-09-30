@@ -1,7 +1,7 @@
 class_name MergeMap extends Node
 
 var maps = {
-	"Tutorial": {
+	"Prototype": {
 		"id": 0,
 		"mergeItems": {
 			"ring": {
@@ -11,6 +11,20 @@ var maps = {
 				"count": 1
 			},
 			"cat": {
+				"count": 3
+			}
+		}
+	},
+	"Prototype2": {
+		"id": 0,
+		"mergeItems": {
+			"ring": {
+				"count": 3
+			},
+			"collar": {
+				"count": 1
+			},
+			"dog": {
 				"count": 3
 			}
 		}

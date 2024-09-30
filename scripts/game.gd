@@ -4,11 +4,14 @@ extends Node2D
 @onready var spawned_items = $SpawnedItems
 
 var rng = RandomNumberGenerator.new()
-const MAP = "Tutorial"
+var MAP = null
 const XAXISBUFFER = 25
 const YAXISBUFFER = 40
 
 func _ready():
+	var rootScene = get_tree().get_current_scene()
+	var temp = rootScene.find_children("*", "TileMap")
+	MAP = temp[0].name
 	spawnFromMergeMap()
 	pass
 	
@@ -19,9 +22,9 @@ func _process(delta):
 	var spawnedItems = get_node("SpawnedItems").get_children()
 	for item in spawnedItems:
 		if (item.has_overlapping_bodies()):
-			var tile_rect = $TileMap.get_used_rect()
-			#var topLeft = $TileMap.map_to_local(tile_rect.position)
-			var size = $TileMap.map_to_local(tile_rect.size)
+			var tile_rect = $Prototype.get_used_rect()
+			#var topLeft = $Prototype.map_to_local(tile_rect.position)
+			var size = $Prototype.map_to_local(tile_rect.size)
 			var xAxisLengthFromCenter = size[0] / 2 - XAXISBUFFER
 			#var yAxisLengthFromCenter = size[1] / 2 - YAXISBUFFER
 			var yAxis = size[1] - YAXISBUFFER
@@ -53,9 +56,9 @@ func spawnMergeItems(itemName, itemObj):
 	var amountToSpawn = itemObj["count"]
 	for count in amountToSpawn:
 		var itemToSpawn = MERGEHELPER.preloadedScenes[itemName].instantiate()
-		var tile_rect = $TileMap.get_used_rect()
-		#var topLeft = $TileMap.map_to_local(tile_rect.position)
-		var size = $TileMap.map_to_local(tile_rect.size)
+		var tile_rect = $Prototype.get_used_rect()
+		#var topLeft = $Prototype.map_to_local(tile_rect.position)
+		var size = $Prototype.map_to_local(tile_rect.size)
 		var xAxisLengthFromCenter = size[0] / 2 - XAXISBUFFER
 		#var yAxisLengthFromCenter = size[1] / 2 - YAXISBUFFER
 		var yAxis = size[1] - YAXISBUFFER
@@ -64,4 +67,4 @@ func spawnMergeItems(itemName, itemObj):
 			itemToSpawn.position = Vector2(randi_range(100, xAxisLengthFromCenter), randi_range(0, -yAxis))
 		else:
 			itemToSpawn.position = Vector2(randi_range(-xAxisLengthFromCenter, -10), randi_range(0, -yAxis))
-		spawned_items.add_child(itemToSpawn)
+		spawned_items.add_child(itemToSpawn, true)

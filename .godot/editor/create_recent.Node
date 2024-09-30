@@ -1,3 +1,4 @@
+TileMap
 Area2D
 CanvasLayer
 Node
@@ -10,5 +11,4 @@ Node2D
 AnimationPlayer
 Timer
 Sprite2D
-TileMap
 Camera2D

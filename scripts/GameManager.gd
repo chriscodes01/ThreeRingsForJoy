@@ -5,6 +5,9 @@ const MERGEBY = 3
 func checkInventory():
 	print(MERGETREELIST.list)
 	
+func changeMap(mapName):
+	pass
+	
 func increment_mergeItem(itemName):
 	print("NEW2 --> Item: " + itemName)
 	var item = MERGETREELIST.list[itemName]
