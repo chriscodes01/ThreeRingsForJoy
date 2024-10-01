@@ -10,11 +10,9 @@ res://scenes/items/fish.tscn
 res://scenes/items/dog.tscn
 res://scenes/items/collar.tscn
 res://scenes/items/bone.tscn
-res://scenes/environment/prototype.tscn
-res://scripts/game.gd
-res://scripts/items/MergeMap.gd
-res://scenes/environment/prototype_2.tscn
-res://scripts/GameManager.gd
-res://scripts/environment/temp_next_level_portal.gd
 res://scenes/environment/Prototype.tscn
 res://scenes/environment/Prototype2.tscn
+res://scenes/environment/Forest.tscn
+res://scripts/environment/temp_next_level_portal.gd
+res://scripts/GameManager.gd
+res://scripts/game.gd

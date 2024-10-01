@@ -1,15 +1,31 @@
 extends Node2D
 
+const FILE_BEGIN = "res://scenes/environment/"
+const EXTENSION = ".tscn"
 const MERGEBY = 3
 
 func checkInventory():
 	print(MERGETREELIST.list)
 	
-func changeMap(mapName):
-	pass
+func changeMap():
+	print("Entered portal")
+	var currentSceneFile = get_tree().current_scene.scene_file_path
+	var mapList = MERGEMAP.maps.keys()
+	var nextMap = mapList.pick_random()
+	print("next map is " + nextMap)
+	var rootScene = get_tree().get_current_scene()
+	var tileMapList = rootScene.find_children("*", "TileMap")
+	var currentMap = tileMapList[0]
+	currentMap.free()
+	
+	var nextLevelPath = FILE_BEGIN + nextMap + EXTENSION
+	var nextLevel = load(nextLevelPath).instantiate()
+	rootScene.add_child(nextLevel, true)
+	nextLevel.set_owner(rootScene)
+	GAMEMAIN.despawnMergeItems()
+	GAMEMAIN.spawnFromMergeMap()
 	
 func increment_mergeItem(itemName):
-	print("NEW2 --> Item: " + itemName)
 	var item = MERGETREELIST.list[itemName]
 	var levelUp = item["levelUp"]
 	var child = item["child"]
@@ -42,7 +58,6 @@ func mergeToNextLevel(nextLevel):
 	var baseItemList = []
 	for itemKey in MERGETREELIST.list:
 		var item = MERGETREELIST.list[itemKey]
-		print(item)
 		if (item["level"] != nextLevel):
 			continue
 		var baseItem = false if item["parent"] else true

@@ -21,6 +21,7 @@ GAMEMANAGER="*res://scripts/GameManager.gd"
 MERGEHELPER="*res://scripts/items/MergeHelper.gd"
 MERGETREELIST="*res://scripts/items/MergeTreeList.gd"
 MERGEMAP="*res://scripts/items/MergeMap.gd"
+GAMEMAIN="*res://scripts/game.gd"
 
 [dotnet]
 

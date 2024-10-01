@@ -1,17 +1,21 @@
 extends Node2D
 
 @onready var pause_menu = $Player/PlayerCamera/CanvasLayer/PauseMenu
-@onready var spawned_items = $SpawnedItems
+@onready var spawned_items = get_tree().get_current_scene().find_child("SpawnedItems")
 
 var rng = RandomNumberGenerator.new()
-var MAP = null
+var CURRENTMAP = null
+var MAPNAME = null
+var rootScene = null
 const XAXISBUFFER = 25
 const YAXISBUFFER = 40
 
 func _ready():
-	var rootScene = get_tree().get_current_scene()
-	var temp = rootScene.find_children("*", "TileMap")
-	MAP = temp[0].name
+	var a = get_tree().get_current_scene()
+	rootScene = get_tree().get_current_scene()
+	var tileMapList = rootScene.find_children("*", "TileMap")
+	CURRENTMAP = tileMapList[0]
+	MAPNAME = CURRENTMAP.name
 	spawnFromMergeMap()
 	pass
 	
@@ -19,12 +23,15 @@ func _process(delta):
 	var pauseInput = Input.is_action_just_pressed("pause")
 	if (pauseInput):
 		togglePause()
-	var spawnedItems = get_node("SpawnedItems").get_children()
+	var spawnedItems = spawned_items.get_children()
 	for item in spawnedItems:
 		if (item.has_overlapping_bodies()):
-			var tile_rect = $Prototype.get_used_rect()
+			if (!CURRENTMAP):
+				var tileMapList = rootScene.find_children("*", "TileMap")
+				CURRENTMAP = tileMapList[0]
+			var tile_rect = CURRENTMAP.get_used_rect()
 			#var topLeft = $Prototype.map_to_local(tile_rect.position)
-			var size = $Prototype.map_to_local(tile_rect.size)
+			var size = CURRENTMAP.map_to_local(tile_rect.size)
 			var xAxisLengthFromCenter = size[0] / 2 - XAXISBUFFER
 			#var yAxisLengthFromCenter = size[1] / 2 - YAXISBUFFER
 			var yAxis = size[1] - YAXISBUFFER
@@ -43,10 +50,17 @@ func togglePause():
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true
 		pause_menu.show()
+		
+func despawnMergeItems():
+		var children = spawned_items.get_children()
+		for child in children:
+			child.free()
 
 func spawnFromMergeMap():
-	var map = MERGEMAP.maps[MAP]
-	#var mapName = map["name"]
+	var tileMapList = rootScene.find_children("*", "TileMap")
+	CURRENTMAP = tileMapList[0]
+	MAPNAME = CURRENTMAP.name
+	var map = MERGEMAP.maps[MAPNAME]
 	var mergeItems = map["mergeItems"]
 	for item in mergeItems:
 		var itemObj = mergeItems[item]
@@ -56,9 +70,9 @@ func spawnMergeItems(itemName, itemObj):
 	var amountToSpawn = itemObj["count"]
 	for count in amountToSpawn:
 		var itemToSpawn = MERGEHELPER.preloadedScenes[itemName].instantiate()
-		var tile_rect = $Prototype.get_used_rect()
+		var tile_rect = CURRENTMAP.get_used_rect()
 		#var topLeft = $Prototype.map_to_local(tile_rect.position)
-		var size = $Prototype.map_to_local(tile_rect.size)
+		var size = CURRENTMAP.map_to_local(tile_rect.size)
 		var xAxisLengthFromCenter = size[0] / 2 - XAXISBUFFER
 		#var yAxisLengthFromCenter = size[1] / 2 - YAXISBUFFER
 		var yAxis = size[1] - YAXISBUFFER
