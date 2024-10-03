@@ -13,6 +13,14 @@ res://scenes/items/bone.tscn
 res://scenes/environment/Prototype.tscn
 res://scenes/environment/Prototype2.tscn
 res://scenes/environment/Forest.tscn
-res://scripts/environment/temp_next_level_portal.gd
-res://scripts/GameManager.gd
 res://scripts/game.gd
+res://scripts/GameManager.gd
+res://scenes/player/player.tscn
+res://scripts/player/player.gd
+res://scenes/environment/Prototype3.tscn
+res://scripts/items/MergeMap.gd
+res://scenes/environment/SceneTransitionAnimation.tscn
+res://scripts/environment/temp_next_level_portal.gd
+res://scenes/environment/BannerTransition.tscn
+res://scripts/UI/PauseMenu.gd
+res://scripts/UI/MainMenu.gd

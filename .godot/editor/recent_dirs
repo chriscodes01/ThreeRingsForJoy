@@ -1,7 +1,7 @@
-res://scripts
 res://scenes/environment
-res://scripts/UI
 res://scripts/player
+res://scripts
+res://scripts/UI
 res://scenes/UI
 res://scripts/environment
 res://assets/player

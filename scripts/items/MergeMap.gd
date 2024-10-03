@@ -31,6 +31,21 @@ var maps = {
 			}
 		}
 	},
+	"Prototype3": {
+		"id": 0,
+		"size": "small",
+		"mergeItems": {
+			"ring": {
+				"count": 1
+			},
+			"collar": {
+				"count": 1
+			},
+			"dog": {
+				"count": 1
+			}
+		}
+	},
 	"Forest": {
 		"id": 1,
 		"size": "medium",

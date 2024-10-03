@@ -178,6 +178,7 @@ var dashTap
 var rollTap
 var downTap
 var openInventory
+var pauseInput
 
 func _ready():
 	wasMovingR = true
@@ -326,6 +327,8 @@ func _process(_delta):
 		
 
 func _physics_process(delta):
+	if (get_tree().paused):
+		return
 	if !dset:
 		gdelta = delta
 		dset = true
@@ -346,10 +349,14 @@ func _physics_process(delta):
 	rollTap = Input.is_action_just_pressed("roll")
 	downTap = Input.is_action_just_pressed("down")
 	openInventory = Input.is_action_just_pressed("openInventory")
+	pauseInput = Input.is_action_just_pressed("pause")
 	
 	#INFO UI
 	if (openInventory):
 		GAMEMANAGER.checkInventory()
+		
+	if (pauseInput):
+		GAMEMAIN.togglePause()
 	
 	
 	#INFO Left and Right Movement
@@ -669,4 +676,10 @@ func _endGroundPound():
 	gravityActive = true
 
 func _placeHolder():
-	print("")
+	pass
+
+func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body is TileMap:
+		print("PLAYER STUCK: MOVING PLAYER OFF TILEMAP")
+		GAMEMAIN.randomlyMovePlayer()
+	pass # Replace with function body.

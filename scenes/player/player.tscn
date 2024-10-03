@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://2awyr1wpho11"]
+[gd_scene load_steps=31 format=3 uid="uid://2awyr1wpho11"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_2fa7d"]
 [ext_resource type="Texture2D" uid="uid://vkusfkra8uyh" path="res://assets/player/knight.png" id="1_w5s12"]
@@ -204,6 +204,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_dno8d"]
 radius = 7.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xn75a"]
+radius = 6.0
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
 collision_layer = 2
 floor_stop_on_slope = false
@@ -229,3 +232,11 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -7)
 shape = SubResource("CircleShape2D_dno8d")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -7)
+shape = SubResource("CircleShape2D_xn75a")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

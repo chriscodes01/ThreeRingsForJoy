@@ -5,7 +5,7 @@ const EXTENSION = ".tscn"
 
 
 func _on_body_entered(_body):
-	GAMEMANAGER.changeMap()
+	GAMEMAIN.changeMap()
 	#print("Entered portal")
 	#var currentSceneFile = get_tree().current_scene.scene_file_path
 	#print(currentSceneFile)

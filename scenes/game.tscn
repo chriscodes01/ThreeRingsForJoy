@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://gkhgo4bwhgk3"]
+[gd_scene load_steps=10 format=3 uid="uid://gkhgo4bwhgk3"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_27aju"]
 [ext_resource type="PackedScene" uid="uid://2awyr1wpho11" path="res://scenes/player/player.tscn" id="1_uv0vl"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://scripts/player/PlayerCamera.gd" id="5_2pdp4"]
 [ext_resource type="PackedScene" uid="uid://jifl0l07156k" path="res://scenes/environment/temp_next_level_portal.tscn" id="5_s1efa"]
 [ext_resource type="PackedScene" uid="uid://b8egjwpuu0o1k" path="res://scenes/environment/Prototype.tscn" id="7_jg5c8"]
+[ext_resource type="PackedScene" uid="uid://crukm7jowy8fp" path="res://scenes/environment/SceneTransitionAnimation.tscn" id="8_t3qgq"]
+[ext_resource type="PackedScene" uid="uid://c8ruaw5a416to" path="res://scenes/environment/BannerTransition.tscn" id="8_temm4"]
 
 [node name="Game" type="Node2D"]
 process_mode = 3
@@ -55,3 +57,9 @@ position = Vector2(22, -9)
 process_mode = 1
 
 [node name="Prototype" parent="." instance=ExtResource("7_jg5c8")]
+
+[node name="BannerTransition" parent="." instance=ExtResource("8_temm4")]
+position = Vector2(-933, -309)
+
+[node name="SceneTransitionAnimation" parent="." instance=ExtResource("8_t3qgq")]
+position = Vector2(-933, -309)
