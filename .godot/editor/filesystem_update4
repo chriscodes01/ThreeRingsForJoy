@@ -12,3 +12,4 @@ res://scripts/UI/PauseMenu.gd
 res://scripts/game.gd
 res://scripts/player/player.gd
 res://scenes/UI/OptionsMenu.tscn
+res://scenes/environment/MainMenuScreen.tscn

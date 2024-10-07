@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0pycudmyephi"]
+[gd_scene load_steps=4 format=3 uid="uid://d0pycudmyephi"]
 
 [ext_resource type="Script" path="res://scripts/UI/MainMenu.gd" id="1_f5l1a"]
 [ext_resource type="FontFile" uid="uid://knjiywwyeeoc" path="res://assets/fonts/Shakedown.ttf" id="2_fvmyk"]
+[ext_resource type="PackedScene" uid="uid://dxju3lhjrsb44" path="res://scenes/environment/MainMenuScreen.tscn" id="3_ix7ch"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -57,6 +58,9 @@ text = "our epic
 hcss game!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MainMenuScreen" parent="." instance=ExtResource("3_ix7ch")]
+position = Vector2(539, 639)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

@@ -19,6 +19,9 @@ func _ready():
 	var tileMapList = rootScene.find_children("*", "TileMap")
 	if (tileMapList.is_empty()):
 		return
+	print(tileMapList[0].name)
+	if (tileMapList[0].name == "MainMenuScreen"):
+		return
 	CURRENTMAP = tileMapList[0]
 	MAPNAME = CURRENTMAP.name
 	spawnFromMergeMap()
