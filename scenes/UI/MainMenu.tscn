@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0pycudmyephi"]
+[gd_scene load_steps=3 format=3 uid="uid://d0pycudmyephi"]
 
 [ext_resource type="Script" path="res://scripts/UI/MainMenu.gd" id="1_f5l1a"]
+[ext_resource type="FontFile" uid="uid://knjiywwyeeoc" path="res://assets/fonts/Shakedown.ttf" id="2_fvmyk"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,23 +14,49 @@ script = ExtResource("1_f5l1a")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 449.0
+offset_top = 316.0
+offset_right = 513.0
+offset_bottom = 369.0
+scale = Vector2(4.19284, 4.19284)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fvmyk")
+theme_override_font_sizes/font_size = 8
 text = "Play"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fvmyk")
+theme_override_font_sizes/font_size = 8
 text = "Options"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fvmyk")
+theme_override_font_sizes/font_size = 8
 text = "Quit"
+
+[node name="Camera2D" type="Camera2D" parent="MarginContainer"]
+position = Vector2(31, 1.90802)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 122.0
+offset_right = 551.0
+offset_bottom = 167.0
+scale = Vector2(2.2003, 2.2003)
+theme_override_fonts/font = ExtResource("2_fvmyk")
+theme_override_font_sizes/font_size = 24
+text = "our epic 
+hcss game!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfxxibh3a7g2y"]
+[gd_scene load_steps=3 format=3 uid="uid://bfxxibh3a7g2y"]
 
 [ext_resource type="Script" path="res://scripts/UI/OptionsMenu.gd" id="1_ksj2d"]
+[ext_resource type="FontFile" uid="uid://knjiywwyeeoc" path="res://assets/fonts/Shakedown.ttf" id="2_h8hsk"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -13,19 +14,27 @@ script = ExtResource("1_ksj2d")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 416.0
+offset_top = 211.0
+offset_right = 520.0
+offset_bottom = 277.0
+scale = Vector2(3.05732, 3.05732)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_h8hsk")
 text = "Volume"
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_h8hsk")
 text = "Back"
+
+[node name="Camera2D" type="Camera2D" parent="MarginContainer"]
+position = Vector2(52.6605, 36.9605)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

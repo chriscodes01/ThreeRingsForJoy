@@ -80,6 +80,7 @@ func changeMap():
 	get_tree().paused = false
 
 func togglePause():
+	print("togglePause")
 	if(!pause_menu):
 		pause_menu = get_tree().get_current_scene().get_node("Player/PlayerCamera/CanvasLayer/PauseMenu")
 	if get_tree().paused:
@@ -90,7 +91,7 @@ func togglePause():
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true
 		pause_menu.show()
-		
+
 func randomlyMovePlayer():
 	if (!rootScene):
 		rootScene = get_tree().get_current_scene()

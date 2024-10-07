@@ -1,3 +1,6 @@
+Label
+RichTextLabel
+Camera2D
 AnimationPlayer
 AnimationTree
 ColorRect
@@ -10,5 +13,3 @@ Button
 VBoxContainer
 MarginContainer
 AnimatedSprite2D
-Node2D
-Timer
