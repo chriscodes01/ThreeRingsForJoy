@@ -4,6 +4,14 @@ extends Node2D
 
 const MERGEBY = 3
 
+func _process(delta):
+	var itemList = MERGETREELIST.list
+	var catCount = itemList["cat"].count
+	var dogCount = itemList["dog"].count
+	#if ((catCount >= 3) && (dogCount >= 3)):
+	if (catCount >= 1):
+		get_tree().change_scene_to_file("res://scenes/UI/CompletionScreen.tscn")
+
 func checkInventory():
 	print(MERGETREELIST.list)
 	
@@ -22,7 +30,7 @@ func increment_mergeItem(itemName):
 	if (canMerge):
 		determineNextMergePath(item, levelUp, child, item.level)
 
-func determineNextMergePath(item, levelUp, child, level):
+func determineNextMergePath(item, levelUp, child, _level):
 	if (item["count"] == MERGEBY):
 		item["count"] = 0
 		if (levelUp):

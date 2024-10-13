@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0pycudmyephi"]
+[gd_scene load_steps=6 format=3 uid="uid://d0pycudmyephi"]
 
 [ext_resource type="Script" path="res://scripts/UI/MainMenu.gd" id="1_f5l1a"]
 [ext_resource type="FontFile" uid="uid://knjiywwyeeoc" path="res://assets/fonts/Shakedown.ttf" id="2_fvmyk"]
 [ext_resource type="PackedScene" uid="uid://dxju3lhjrsb44" path="res://scenes/environment/MainMenuScreen.tscn" id="3_ix7ch"]
+[ext_resource type="FontFile" uid="uid://c54dp7n3n64fj" path="res://assets/fonts/KiriFont.ttf" id="3_mf710"]
+[ext_resource type="AudioStream" uid="uid://cj0im5ssgascc" path="res://assets/audio/menu_music_trimmed.mp3" id="5_4jkfa"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -45,22 +47,50 @@ text = "Quit"
 [node name="Camera2D" type="Camera2D" parent="MarginContainer"]
 position = Vector2(31, 1.90802)
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 95.0
-offset_top = 122.0
-offset_right = 551.0
-offset_bottom = 167.0
-scale = Vector2(2.2003, 2.2003)
-theme_override_fonts/font = ExtResource("2_fvmyk")
+offset_left = 158.0
+offset_top = 146.0
+offset_right = 614.0
+offset_bottom = 197.0
+scale = Vector2(1.89726, 1.81279)
+theme_override_fonts/font = ExtResource("3_mf710")
 theme_override_font_sizes/font_size = 24
-text = "our epic 
-hcss game!"
+text = "it takes three"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="Title"]
+layout_mode = 0
+offset_left = 0.527076
+offset_top = 1.10328
+offset_right = 456.527
+offset_bottom = 52.1033
+scale = Vector2(0.991655, 0.947502)
+theme_override_colors/font_color = Color(0.756863, 0.6, 0, 1)
+theme_override_fonts/font = ExtResource("3_mf710")
+theme_override_font_sizes/font_size = 24
+text = "it takes three"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instructions" type="Label" parent="."]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 221.0
+offset_right = 787.0
+offset_bottom = 244.0
+text = "Collect three of each item to merge to the next item!
+Start with rings and make your way to the end."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MainMenuScreen" parent="." instance=ExtResource("3_ix7ch")]
 position = Vector2(539, 639)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4jkfa")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqyw6hu05nwul"]
+
+[ext_resource type="Texture2D" uid="uid://be0kxx1krwg3a" path="res://assets/UI/inventory-slot.png" id="1_rn3eu"]
+[ext_resource type="Script" path="res://scripts/UI/InvSlot.gd" id="1_ws7w3"]
+[ext_resource type="FontFile" uid="uid://2duvyu4gvm4m" path="res://assets/fonts/PixelOperator8.ttf" id="3_s64e7"]
+
+[node name="InvSlot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_ws7w3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.891835, 0.887711)
+texture = ExtResource("1_rn3eu")
+centered = false
+
+[node name="itemDisplay" type="Sprite2D" parent="."]
+position = Vector2(7, 7)
+scale = Vector2(0.897048, 0.897048)
+
+[node name="ItemCountLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 48.0
+offset_bottom = 30.0
+scale = Vector2(0.388297, 0.388297)
+theme_override_fonts/font = ExtResource("3_s64e7")
+text = "0
+"
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 14.0
+offset_right = 61.0
+offset_bottom = 37.0
+scale = Vector2(0.20234, 0.20234)
+theme_override_fonts/font = ExtResource("3_s64e7")
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -75,73 +75,15 @@ var list = {
 	}
 }
 
-var newList = {
-	"Level1": {
-		"RingTree": {
-			"ring": {
-				"id": 0,
-				"count": 0,
-				"parent": null,
-				"child": "collar",
-				"levelUp": null
-			},
-			"collar": {
-				"id": 1,
-				"count": 0,
-				"parent": "ring",
-				"child": null,
-				"levelUp": "Level2"
-			}
-		}
-	},
-	"Level2": {
-		"DogTree": {
-			"pup": {
-				"id": 2,
-				"count": 0,
-				"parent": null,
-				"child": "bone",
-				"levelUp": null
-			},
-			"bone": {
-				"id": 3,
-				"count": 0,
-				"parent": "pup",
-				"child": "dog",
-				"levelUp": null
-			},
-			"dog": {
-				"id": 4,
-				"count": 0,
-				"parent": "bone",
-				"child": null,
-				"levelUp": null
-			}
-		},
-		"CatTree": {
-			"kitten": {
-				"id": 5,
-				"count": 0,
-				"parent": null,
-				"child": "fish",
-				"levelUp": null
-			},
-			"fish": {
-				"id": 6,
-				"count": 0,
-				"parent": "kitten",
-				"child": "fish",
-				"levelUp": null
-			},
-			"cate": {
-				"id": 7,
-				"count": 0,
-				"parent": "fish",
-				"child": null,
-				"levelUp": null
-			}
-		}
-	}
+var listHelper = {
+	"ring": 0,
+	"collar": 1,
+	"pup": 2,
+	"bone": 3,
+	"dog": 4,
+	"kitten": 5,
+	"fish": 6,
+	"cat": 7
 }
 
 var oldList = {

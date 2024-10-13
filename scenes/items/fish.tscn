@@ -1,39 +1,46 @@
-[gd_scene load_steps=8 format=3 uid="uid://bllm0wkssv1o"]
+[gd_scene load_steps=9 format=3 uid="uid://bllm0wkssv1o"]
 
-[ext_resource type="Texture2D" uid="uid://d4a1r1wofghtm" path="res://assets/items/fruit.png" id="1_3xm2v"]
 [ext_resource type="Script" path="res://scripts/items/fish.gd" id="1_7h3il"]
+[ext_resource type="Texture2D" uid="uid://477lagpo22lr" path="res://assets/items/smallItemsTransparent.png" id="2_yj8ss"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wy23w"]
-atlas = ExtResource("1_3xm2v")
-region = Rect2(0, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_slell"]
+atlas = ExtResource("2_yj8ss")
+region = Rect2(0, 54, 10, 9)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m365a"]
-atlas = ExtResource("1_3xm2v")
-region = Rect2(16, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mv5o"]
+atlas = ExtResource("2_yj8ss")
+region = Rect2(10, 54, 10, 9)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i6ni2"]
-atlas = ExtResource("1_3xm2v")
-region = Rect2(32, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwwxa"]
+atlas = ExtResource("2_yj8ss")
+region = Rect2(0, 63, 10, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e6bx"]
+atlas = ExtResource("2_yj8ss")
+region = Rect2(10, 63, 10, 9)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_05vkr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wy23w")
+"texture": SubResource("AtlasTexture_slell")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m365a")
+"texture": SubResource("AtlasTexture_3mv5o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i6ni2")
+"texture": SubResource("AtlasTexture_hwwxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e6bx")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2cl5a"]
-radius = 7.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0mis"]
+size = Vector2(9.5, 9.5)
 
 [node name="Fish" type="Area2D"]
 collision_mask = 2147483650
@@ -45,6 +52,7 @@ sprite_frames = SubResource("SpriteFrames_05vkr")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_2cl5a")
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_i0mis")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

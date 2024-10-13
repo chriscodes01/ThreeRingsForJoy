@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://gkhgo4bwhgk3"]
+[gd_scene load_steps=14 format=3 uid="uid://gkhgo4bwhgk3"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_27aju"]
 [ext_resource type="PackedScene" uid="uid://2awyr1wpho11" path="res://scenes/player/player.tscn" id="1_uv0vl"]
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="1_w07co"]
 [ext_resource type="PackedScene" uid="uid://03kfptvy21wh" path="res://scenes/UI/PauseMenu.tscn" id="4_safpi"]
 [ext_resource type="Script" path="res://scripts/player/PlayerCamera.gd" id="5_2pdp4"]
-[ext_resource type="PackedScene" uid="uid://jifl0l07156k" path="res://scenes/environment/temp_next_level_portal.tscn" id="5_s1efa"]
+[ext_resource type="PackedScene" uid="uid://e74lu177wi27" path="res://scenes/UI/Inventory.tscn" id="6_dfgnq"]
 [ext_resource type="PackedScene" uid="uid://b8egjwpuu0o1k" path="res://scenes/environment/Prototype.tscn" id="7_jg5c8"]
+[ext_resource type="FontFile" uid="uid://2duvyu4gvm4m" path="res://assets/fonts/PixelOperator8.ttf" id="7_rqhnd"]
+[ext_resource type="Script" path="res://scripts/UI/StopwatchLabel.gd" id="8_l4w4g"]
 [ext_resource type="PackedScene" uid="uid://crukm7jowy8fp" path="res://scenes/environment/SceneTransitionAnimation.tscn" id="8_t3qgq"]
 [ext_resource type="PackedScene" uid="uid://c8ruaw5a416to" path="res://scenes/environment/BannerTransition.tscn" id="8_temm4"]
+[ext_resource type="AudioStream" uid="uid://c0sutyguphxot" path="res://assets/audio/main_loop_trimmed.mp3" id="11_68m8x"]
+[ext_resource type="PackedScene" uid="uid://buij6av02gybg" path="res://scenes/UI/stopwatch.tscn" id="11_mp60q"]
 
 [node name="Game" type="Node2D"]
 process_mode = 3
@@ -16,7 +20,7 @@ script = ExtResource("1_27aju")
 
 [node name="GameManager" type="Node2D" parent="."]
 unique_name_in_owner = true
-process_mode = 1
+process_mode = 3
 script = ExtResource("1_w07co")
 
 [node name="Player" type="Node" parent="."]
@@ -29,6 +33,7 @@ collision_layer = 3
 
 [node name="PlayerCamera" type="Camera2D" parent="Player"]
 position = Vector2(-20, -19)
+zoom = Vector2(2, 2)
 process_callback = 0
 limit_left = -825
 limit_top = -900
@@ -49,9 +54,25 @@ offset_right = -124.0
 offset_bottom = -126.0
 scale = Vector2(3.11947, 3.11947)
 
-[node name="TempNextLevelPortal" parent="." instance=ExtResource("5_s1efa")]
-process_mode = 1
-position = Vector2(22, -9)
+[node name="Inventory" parent="Player/PlayerCamera/CanvasLayer" instance=ExtResource("6_dfgnq")]
+
+[node name="StopwatchLabel" type="Label" parent="Player/PlayerCamera/CanvasLayer"]
+offset_left = 9.0
+offset_top = 31.0
+offset_right = 127.0
+offset_bottom = 54.0
+scale = Vector2(1.54077, 1.54077)
+theme_override_fonts/font = ExtResource("7_rqhnd")
+text = "00:00:000"
+script = ExtResource("8_l4w4g")
+
+[node name="TimerWarning" type="Label" parent="Player/PlayerCamera/CanvasLayer"]
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 480.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("7_rqhnd")
+text = "Hurry! Time left before map switches:"
 
 [node name="SpawnedItems" type="Node" parent="."]
 process_mode = 1
@@ -63,3 +84,14 @@ position = Vector2(-933, -309)
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("8_t3qgq")]
 position = Vector2(-933, -309)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_68m8x")
+autoplay = true
+
+[node name="MapTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Stopwatch" parent="." instance=ExtResource("11_mp60q")]
+
+[connection signal="timeout" from="MapTimer" to="." method="_on_timer_timeout"]

@@ -1,8 +1,10 @@
 extends Node2D
 
 # THIS SCRIPT HANDLES GLOBAL UI LOGIC
-@onready var scene_transition_animation = $BannerTransition/AnimationPlayer
-@onready var pause_menu = $Player/PlayerCamera/CanvasLayer/PauseMenu
+#@onready var scene_transition_animation = $BannerTransition/AnimationPlayer
+#@onready var pause_menu = $Player/PlayerCamera/CanvasLayer/PauseMenu
+#@onready var timer = $MapTimer
+var time
 
 const FILE_BEGIN = "res://scenes/environment/"
 const EXTENSION = ".tscn"
@@ -14,19 +16,19 @@ const XAXISBUFFER = 25
 const YAXISBUFFER = 275
 
 func _ready():
-	var a = get_tree().get_current_scene()
 	rootScene = get_tree().get_current_scene()
 	var tileMapList = rootScene.find_children("*", "TileMap")
 	if (tileMapList.is_empty()):
 		return
-	print(tileMapList[0].name)
 	if (tileMapList[0].name == "MainMenuScreen"):
 		return
 	CURRENTMAP = tileMapList[0]
 	MAPNAME = CURRENTMAP.name
+	var map = MERGEMAP.maps[MAPNAME]
 	spawnFromMergeMap()
+	start_timer(map.time)
 	
-func _process(delta):
+func _process(_delta):
 	var current_scene = get_tree().get_current_scene()
 	if (!current_scene):
 		return
@@ -55,10 +57,11 @@ func _process(delta):
 				#item.position = Vector2(randi_range(-xAxisLengthFromCenter, -10), randi_range(0, -yAxis))
 
 func changeMap():
+	pause_timer()
 	print("Entered portal")
-	var rootScene = get_tree().get_current_scene()
+	rootScene = get_tree().get_current_scene()
 	var tileMapList = rootScene.find_children("*", "TileMap")
-	scene_transition_animation = rootScene.find_child("BannerTransition")
+	var scene_transition_animation = rootScene.find_child("BannerTransition")
 	var animationPlayer = scene_transition_animation.find_child("AnimationPlayer")
 	animationPlayer.play("fade_in")
 	hidePlayer()
@@ -81,11 +84,12 @@ func changeMap():
 	randomlyMovePlayer()
 	showPlayer()
 	get_tree().paused = false
+	#MERGEMAP.maps[nextMap].time
+	start_timer(MERGEMAP.maps[nextMap].time)
 
 func togglePause():
 	print("togglePause")
-	if(!pause_menu):
-		pause_menu = get_tree().get_current_scene().get_node("Player/PlayerCamera/CanvasLayer/PauseMenu")
+	var pause_menu = get_tree().get_current_scene().get_node("Player/PlayerCamera/CanvasLayer/PauseMenu")
 	if get_tree().paused:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		get_tree().paused = false
@@ -122,6 +126,9 @@ func despawnMergeItems():
 			child.free()
 
 func spawnFromMergeMap():
+	var spawned_items = get_tree().get_current_scene().find_child("SpawnedItems")
+	if (!spawned_items):
+		return
 	if (!rootScene):
 		rootScene = get_tree().get_current_scene()
 	var tileMapList = rootScene.find_children("*", "TileMap")
@@ -131,9 +138,26 @@ func spawnFromMergeMap():
 	var mergeItems = map["mergeItems"]
 	for item in mergeItems:
 		var itemObj = mergeItems[item]
-		var spawned_items = get_tree().get_current_scene().find_child("SpawnedItems")
 		spawnMergeItems(item, itemObj, spawned_items)
 
+func start_timer(time):
+	var current_scene = get_tree().get_current_scene()
+	var timer = current_scene.find_child("MapTimer")
+	if (!timer):
+		return
+	timer.paused = false
+	timer.wait_time = time
+	timer.start()
+
+func pause_timer():
+	var current_scene = get_tree().get_current_scene()
+	var timer = current_scene.find_child("MapTimer")
+	timer.paused = true
+
+func _on_timer_timeout():
+	print("times up!")
+	changeMap()
+	
 func spawnMergeItems(itemName, itemObj, spawned_items):
 	var amountToSpawn = itemObj["count"]
 	for count in amountToSpawn:
@@ -164,3 +188,18 @@ func randomizeObjectPosition(object):
 		object.position = Vector2(randi_range(10, xAxisLengthFromCenter), randi_range(0, -yAxis))
 	else:
 		object.position = Vector2(randi_range(-xAxisLengthFromCenter, -10), randi_range(0, -yAxis))
+
+func get_time():
+	var current_scene = get_tree().get_current_scene()
+	var timer = current_scene.find_child("MapTimer")
+	return timer.time_left
+
+func time_to_string() -> String:
+	var time = get_time()
+	var mili = fmod(time, 1) * 1000
+	var sec = fmod(time, 60)
+	var min = time / 60
+	var format_string = "%02d : %02d : %02d"
+	var actual_string = format_string % [min, sec, mili]
+	return actual_string
+	

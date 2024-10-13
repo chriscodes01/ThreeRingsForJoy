@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://8on7mhejw6yv"]
+
+[ext_resource type="PackedScene" uid="uid://2awyr1wpho11" path="res://scenes/player/player.tscn" id="2_jlp31"]
+[ext_resource type="Script" path="res://scripts/player/PlayerCamera.gd" id="3_rdjuq"]
+[ext_resource type="PackedScene" uid="uid://03kfptvy21wh" path="res://scenes/UI/PauseMenu.tscn" id="4_cb1bx"]
+[ext_resource type="AudioStream" uid="uid://db8yihevwvb5y" path="res://assets/audio/win_screen_music_trimmed.mp3" id="5_kmcdn"]
+[ext_resource type="PackedScene" uid="uid://e74lu177wi27" path="res://scenes/UI/Inventory.tscn" id="5_p3l33"]
+[ext_resource type="PackedScene" uid="uid://b8egjwpuu0o1k" path="res://scenes/environment/Prototype.tscn" id="5_t1twe"]
+
+[node name="CompletionScreen" type="Node2D"]
+process_mode = 3
+
+[node name="Player" type="Node" parent="."]
+process_mode = 3
+
+[node name="Player" parent="Player" instance=ExtResource("2_jlp31")]
+process_mode = 1
+position = Vector2(-16, -27)
+collision_layer = 3
+
+[node name="PlayerCamera" type="Camera2D" parent="Player"]
+position = Vector2(-20, -19)
+zoom = Vector2(2, 2)
+process_callback = 0
+limit_left = -825
+limit_top = -900
+limit_right = 825
+limit_bottom = 200
+position_smoothing_enabled = true
+editor_draw_limits = true
+script = ExtResource("3_rdjuq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/PlayerCamera"]
+
+[node name="PauseMenu" parent="Player/PlayerCamera/CanvasLayer" instance=ExtResource("4_cb1bx")]
+process_mode = 3
+visible = false
+offset_left = -124.0
+offset_top = -126.0
+offset_right = -124.0
+offset_bottom = -126.0
+scale = Vector2(3.11947, 3.11947)
+
+[node name="Inventory" parent="Player/PlayerCamera/CanvasLayer" instance=ExtResource("5_p3l33")]
+
+[node name="Prototype" parent="." instance=ExtResource("5_t1twe")]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_kmcdn")
+autoplay = true

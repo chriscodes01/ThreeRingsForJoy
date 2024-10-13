@@ -1,39 +1,46 @@
-[gd_scene load_steps=8 format=3 uid="uid://bd2fawo1nn786"]
+[gd_scene load_steps=9 format=3 uid="uid://bd2fawo1nn786"]
 
 [ext_resource type="Script" path="res://scripts/items/bone.gd" id="1_nnyy7"]
-[ext_resource type="Texture2D" uid="uid://d4a1r1wofghtm" path="res://assets/items/fruit.png" id="1_xrlmm"]
+[ext_resource type="Texture2D" uid="uid://477lagpo22lr" path="res://assets/items/smallItemsTransparent.png" id="2_fc3h5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wp01s"]
-atlas = ExtResource("1_xrlmm")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5lw4"]
+atlas = ExtResource("2_fc3h5")
+region = Rect2(0, 36, 10, 9)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xsajc"]
-atlas = ExtResource("1_xrlmm")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_22m50"]
+atlas = ExtResource("2_fc3h5")
+region = Rect2(10, 36, 10, 9)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6rnwv"]
-atlas = ExtResource("1_xrlmm")
-region = Rect2(32, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef5yh"]
+atlas = ExtResource("2_fc3h5")
+region = Rect2(0, 45, 10, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl1cb"]
+atlas = ExtResource("2_fc3h5")
+region = Rect2(10, 45, 10, 9)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cnr23"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wp01s")
+"texture": SubResource("AtlasTexture_r5lw4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xsajc")
+"texture": SubResource("AtlasTexture_22m50")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6rnwv")
+"texture": SubResource("AtlasTexture_ef5yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl1cb")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x2m7s"]
-radius = 7.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ou2v7"]
+size = Vector2(9, 9.5)
 
 [node name="Bone" type="Area2D"]
 collision_mask = 2
@@ -43,8 +50,11 @@ script = ExtResource("1_nnyy7")
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_cnr23")
 autoplay = "default"
+frame = 3
+frame_progress = 0.731252
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_x2m7s")
+position = Vector2(-0.5, -1.75)
+shape = SubResource("RectangleShape2D_ou2v7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
