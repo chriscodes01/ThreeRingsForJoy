@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cisdsd5ov2b2m"]
+
+[ext_resource type="Texture2D" uid="uid://cqotvs5k4gyto" path="res://assets/environment/mapTileSetExtras1.png" id="1_rn111"]
+
+[node name="FrontBigTree1" type="Sprite2D"]
+z_index = 10
+texture = ExtResource("1_rn111")
+region_enabled = true
+region_rect = Rect2(12, 0, 12, 18)

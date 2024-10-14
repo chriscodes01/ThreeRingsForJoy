@@ -9,10 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://b8egjwpuu0o1k" path="res://scenes/environment/Prototype.tscn" id="7_jg5c8"]
 [ext_resource type="FontFile" uid="uid://2duvyu4gvm4m" path="res://assets/fonts/PixelOperator8.ttf" id="7_rqhnd"]
 [ext_resource type="Script" path="res://scripts/UI/StopwatchLabel.gd" id="8_l4w4g"]
-[ext_resource type="PackedScene" uid="uid://crukm7jowy8fp" path="res://scenes/environment/SceneTransitionAnimation.tscn" id="8_t3qgq"]
+[ext_resource type="PackedScene" uid="uid://crukm7jowy8fp" path="res://scenes/environment/FadeTransition.tscn" id="8_t3qgq"]
 [ext_resource type="PackedScene" uid="uid://c8ruaw5a416to" path="res://scenes/environment/BannerTransition.tscn" id="8_temm4"]
+[ext_resource type="PackedScene" uid="uid://cu3nlw41l2jtg" path="res://scenes/environment/CompletionTransition.tscn" id="11_1ifdo"]
 [ext_resource type="AudioStream" uid="uid://c0sutyguphxot" path="res://assets/audio/main_loop_trimmed.mp3" id="11_68m8x"]
-[ext_resource type="PackedScene" uid="uid://buij6av02gybg" path="res://scenes/UI/stopwatch.tscn" id="11_mp60q"]
 
 [node name="Game" type="Node2D"]
 process_mode = 3
@@ -33,12 +33,12 @@ collision_layer = 3
 
 [node name="PlayerCamera" type="Camera2D" parent="Player"]
 position = Vector2(-20, -19)
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 process_callback = 0
-limit_left = -825
-limit_top = -900
-limit_right = 825
-limit_bottom = 200
+limit_left = -300
+limit_top = -500
+limit_right = 300
+limit_bottom = 50
 position_smoothing_enabled = true
 editor_draw_limits = true
 script = ExtResource("5_2pdp4")
@@ -80,18 +80,19 @@ process_mode = 1
 [node name="Prototype" parent="." instance=ExtResource("7_jg5c8")]
 
 [node name="BannerTransition" parent="." instance=ExtResource("8_temm4")]
-position = Vector2(-933, -309)
+position = Vector2(-603, -415)
+
+[node name="CompletionTransition" parent="." instance=ExtResource("11_1ifdo")]
+position = Vector2(-600, -414)
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("8_t3qgq")]
-position = Vector2(-933, -309)
+position = Vector2(-398, -218)
 
-[node name="Music" type="AudioStreamPlayer2D" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_68m8x")
 autoplay = true
 
 [node name="MapTimer" type="Timer" parent="."]
 one_shot = true
-
-[node name="Stopwatch" parent="." instance=ExtResource("11_mp60q")]
 
 [connection signal="timeout" from="MapTimer" to="." method="_on_timer_timeout"]

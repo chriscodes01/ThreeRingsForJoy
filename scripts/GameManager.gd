@@ -3,14 +3,17 @@ extends Node2D
 # THIS SCRIPT HANDLES GLOBAL BACKEND LOGIC
 
 const MERGEBY = 3
+var gameCompleted = false
 
 func _process(delta):
 	var itemList = MERGETREELIST.list
 	var catCount = itemList["cat"].count
 	var dogCount = itemList["dog"].count
 	#if ((catCount >= 3) && (dogCount >= 3)):
-	if (catCount >= 1):
-		get_tree().change_scene_to_file("res://scenes/UI/CompletionScreen.tscn")
+	if (catCount >= 1 ):
+		if (!gameCompleted):
+			gameCompleted = true
+			GAMEMAIN.showCompletionScreen()
 
 func checkInventory():
 	print(MERGETREELIST.list)

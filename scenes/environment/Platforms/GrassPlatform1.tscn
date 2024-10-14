@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmncfwdurxg3e"]
+
+[ext_resource type="Texture2D" uid="uid://cqotvs5k4gyto" path="res://assets/environment/mapTileSetExtras1.png" id="1_xdeq5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndiyl"]
+size = Vector2(6, 2)
+
+[node name="GrassPlatform1" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xdeq5")
+region_enabled = true
+region_rect = Rect2(24, 20, 6, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ndiyl")
+one_way_collision = true

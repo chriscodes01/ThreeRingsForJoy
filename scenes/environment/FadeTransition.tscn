@@ -54,7 +54,7 @@ _data = {
 "fade_out": SubResource("Animation_kk78t")
 }
 
-[node name="SceneTransitionAnimation" type="Node2D"]
+[node name="FadeTransition" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -83425.0

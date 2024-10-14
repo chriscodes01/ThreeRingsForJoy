@@ -20,7 +20,7 @@ var list = {
 		"levelUp": "level2"
 	},
 	"pup": {
-		"id": 2,
+		"id": 4,
 		"level": "level2",
 		"origin": "pup",
 		"count": 0,
@@ -29,7 +29,7 @@ var list = {
 		"levelUp": null
 	},
 	"bone": {
-		"id": 3,
+		"id": 5,
 		"level": "level2",
 		"origin": "pup",
 		"count": 0,
@@ -38,7 +38,7 @@ var list = {
 		"levelUp": null
 	},
 	"dog": {
-		"id": 4,
+		"id": 6,
 		"level": "level2",
 		"origin": "pup",
 		"count": 0,
@@ -47,7 +47,7 @@ var list = {
 		"levelUp": null
 	},
 	"kitten": {
-		"id": 5,
+		"id": 8,
 		"level": "level2",
 		"origin": "kitten",
 		"count": 0,
@@ -56,7 +56,7 @@ var list = {
 		"levelUp": null
 	},
 	"fish": {
-		"id": 6,
+		"id": 9,
 		"level": "level2",
 		"origin": "kitten",
 		"count": 0,
@@ -65,7 +65,7 @@ var list = {
 		"levelUp": null
 	},
 	"cat": {
-		"id": 7,
+		"id": 10,
 		"level": "level2",
 		"origin": "kitten",
 		"count": 0,
@@ -76,14 +76,14 @@ var list = {
 }
 
 var listHelper = {
-	"ring": 0,
-	"collar": 1,
-	"pup": 2,
-	"bone": 3,
-	"dog": 4,
-	"kitten": 5,
-	"fish": 6,
-	"cat": 7
+	"ring": list["ring"].id,
+	"collar": list["collar"].id,
+	"pup": list["pup"].id,
+	"bone": list["bone"].id,
+	"dog": list["dog"].id,
+	"kitten": list["kitten"].id,
+	"fish": list["fish"].id,
+	"cat": list["cat"].id
 }
 
 var oldList = {

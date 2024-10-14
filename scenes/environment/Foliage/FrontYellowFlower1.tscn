@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwbhw8l40vd2u"]
+
+[ext_resource type="Texture2D" uid="uid://cqotvs5k4gyto" path="res://assets/environment/mapTileSetExtras1.png" id="1_jxf5n"]
+
+[node name="FrontYellowFlower1" type="Sprite2D"]
+z_index = 10
+texture = ExtResource("1_jxf5n")
+region_enabled = true
+region_rect = Rect2(12, 31, 6, 5)

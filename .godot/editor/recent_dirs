@@ -1,3 +1,7 @@
+res://scenes/environment/Foliage
+res://scenes/environment
+res://assets/environment
+res://assets/player
 res://scenes/UI
 res://assets/fonts
 res://scripts/UI
@@ -5,11 +9,9 @@ res://scenes
 res://
 res://assets/items
 res://assets/UI
-res://scenes/environment
 res://scripts/player
 res://scripts
 res://scripts/environment
-res://assets/player
 res://scripts/items
 res://scenes/items
 C:/Users/Chris/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Visual Studio Code

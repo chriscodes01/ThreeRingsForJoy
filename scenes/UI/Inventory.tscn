@@ -20,7 +20,7 @@ offset_left = -7.47926
 offset_top = -6.47594
 offset_right = 32.5207
 offset_bottom = 33.524
-scale = Vector2(1.33662, 1.32559)
+scale = Vector2(1.42634, 1.41457)
 texture = ExtResource("2_ecf5q")
 patch_margin_left = 6
 patch_margin_top = 6
@@ -29,11 +29,11 @@ patch_margin_bottom = 6
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 2.2481
-offset_top = 2.73127
-offset_right = 78.2481
-offset_bottom = 58.7313
-scale = Vector2(0.477743, 0.626889)
+offset_left = 2.8578
+offset_top = 2.94767
+offset_right = 78.8578
+offset_bottom = 58.9477
+scale = Vector2(0.45499, 0.597032)
 columns = 4
 
 [node name="InvSlot00" parent="NinePatchRect/GridContainer" instance=ExtResource("3_sri4k")]

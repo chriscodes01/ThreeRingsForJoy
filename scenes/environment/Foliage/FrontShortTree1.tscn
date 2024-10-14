@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://hu4m4w88e4ok"]
+
+[ext_resource type="Texture2D" uid="uid://cqotvs5k4gyto" path="res://assets/environment/mapTileSetExtras1.png" id="1_c0fvs"]
+
+[node name="FrontShortTree1" type="Sprite2D"]
+z_index = 10
+texture = ExtResource("1_c0fvs")
+region_enabled = true
+region_rect = Rect2(6, 18, 6, 18)
