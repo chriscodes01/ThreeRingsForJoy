@@ -65,8 +65,10 @@ func changeMap():
 	var tileMapList = rootScene.find_children("*", "TileMap")
 	var scene_transition_animation = rootScene.find_child("BannerTransition")
 	var animationPlayer = scene_transition_animation.find_child("AnimationPlayer")
-	animationPlayer.play("fade_in")
 	hidePlayer()
+	resetPlayer()
+	animationPlayer.play("fade_in")
+	print("fade in")
 	get_tree().paused = true
 	var currentMap = tileMapList[0]
 	var mapList = MERGEMAP.maps.keys()
@@ -82,14 +84,15 @@ func changeMap():
 	var nextLevelPath = FILE_BEGIN + nextMap + EXTENSION
 	var nextLevel = load(nextLevelPath).instantiate()
 	despawnMergeItems()
-	await get_tree().create_timer(.5).timeout
+	await get_tree().create_timer(1).timeout
 	rootScene.add_child(nextLevel, true)
 	nextLevel.set_owner(rootScene)
 	CURRENTMAP = nextLevel
 	changeViewportLimits()
 	spawnFromMergeMap()
 	animationPlayer.play("fade_out")
-	await get_tree().create_timer(.5).timeout
+	print("fade out")
+	await get_tree().create_timer(1).timeout
 	randomlyMovePlayer()
 	showPlayer()
 	get_tree().paused = false
@@ -239,6 +242,8 @@ func showCompletionScreen():
 	var tileMapList = rootScene.find_children("*", "TileMap")
 	var scene_transition_animation = rootScene.find_child("CompletionTransition")
 	var animationPlayer = scene_transition_animation.find_child("AnimationPlayer")
+	var currentMap = tileMapList[0]
+		
 	animationPlayer.play("fade_in")
 	hideGameUI()
 	#cameraZoomOut()
@@ -246,15 +251,12 @@ func showCompletionScreen():
 	hidePlayer()
 	resetPlayer()
 	#get_tree().paused = true
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://scenes/UI/CompletionScreen.tscn")
 	#playCompletionMusic()
 	#animationPlayer.play("fade_in")
 	#if (tileMapList.is_empty()):
 		#return
-	#var currentMap = tileMapList[0]
-	#var nextMap = COMPLETIONMAP
-	#currentMap.free()
 	#var nextLevelPath = FILE_BEGIN + nextMap + EXTENSION
 	#var nextLevel = load(nextLevelPath).instantiate()
 	#despawnMergeItems()

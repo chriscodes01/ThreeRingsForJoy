@@ -15,7 +15,8 @@ func _ready():
 	#for item in items:
 		#item.visible = true
 	animationPlayer.play("fade_out")
-	await get_tree().create_timer(2).timeout
+	print("fade out")
+	await get_tree().create_timer(1).timeout
 	Input.action_press("jump")
 	await get_tree().create_timer(2).timeout
 	var thanks = get_tree().get_current_scene().find_child("Thanks")

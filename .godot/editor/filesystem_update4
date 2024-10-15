@@ -12,3 +12,6 @@ res://scenes/UI/MainMenu.tscn
 res://scripts/game.gd
 res://scripts/GameManager.gd
 res://scripts/player/player.gd
+res://scenes/environment/CompletionTransition.tscn
+res://scripts/environment/CompletionTransition.gd
+res://scenes/environment/BannerTransition.tscn

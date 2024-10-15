@@ -82,11 +82,13 @@ process_mode = 1
 [node name="Tutorial" parent="." instance=ExtResource("9_m3gd6")]
 
 [node name="BannerTransition" parent="." instance=ExtResource("8_temm4")]
+z_index = 2
 position = Vector2(-354, -260)
 scale = Vector2(0.38, 0.38)
 script = ExtResource("11_smfhw")
 
 [node name="CompletionTransition" parent="." instance=ExtResource("11_1ifdo")]
+z_index = 15
 position = Vector2(-322, -252)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("11_smfhw")
