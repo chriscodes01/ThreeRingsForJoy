@@ -242,8 +242,6 @@ func showCompletionScreen():
 	var tileMapList = rootScene.find_children("*", "TileMap")
 	var scene_transition_animation = rootScene.find_child("CompletionTransition")
 	var animationPlayer = scene_transition_animation.find_child("AnimationPlayer")
-	var currentMap = tileMapList[0]
-		
 	animationPlayer.play("fade_in")
 	hideGameUI()
 	#cameraZoomOut()
