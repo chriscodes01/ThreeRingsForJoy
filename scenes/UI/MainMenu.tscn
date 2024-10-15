@@ -83,13 +83,24 @@ vertical_alignment = 1
 
 [node name="Instructions" type="Label" parent="."]
 layout_mode = 0
-offset_left = 341.0
+offset_left = 306.0
 offset_top = 276.0
-offset_right = 795.0
-offset_bottom = 325.0
+offset_right = 839.0
+offset_bottom = 351.0
 theme_override_colors/font_color = Color(0.60933, 0.60933, 0.60933, 1)
-text = "Collect at least three of each item to complete the game!
-Items can merge - start with three rings and go from there."
+text = "Help us get all our pet stuff back!
+We had three of every thing (we loooove pets)...
+Start by collecting our rings. Merge them together to get the rest!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionsShadow" type="Label" parent="Instructions"]
+offset_left = 96.0
+offset_right = 629.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.60933, 0.60933, 0.60933, 1)
+text = "loooove
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 

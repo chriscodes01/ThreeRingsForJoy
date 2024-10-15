@@ -2,6 +2,7 @@ extends Area2D
 
 var fileName = get_script().get_path().get_file()
 var itemName = fileName.get_slice(".", 0)
+@onready var animation_player = $AnimationPlayer
 
 func _on_body_entered(_body):
 	var scene = get_tree().get_current_scene()
@@ -9,4 +10,4 @@ func _on_body_entered(_body):
 		return
 	if (_body.name == "Player"):
 		GAMEMANAGER.increment_mergeItem(itemName)
-		queue_free()
+		animation_player.play("pickup")

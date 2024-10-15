@@ -1,8 +1,7 @@
-res://scenes/environment/Forest.tscn
-res://scenes/environment/ForestSmall.tscn
-res://scripts/player/player.gd
-res://scenes/environment/CompletionMap.tscn
-res://scripts/items/cat.gd
-res://scripts/items/kitten.gd
-res://scripts/items/dog.gd
+res://scenes/items/pup.tscn
 res://scripts/items/pup.gd
+res://scenes/items/dog.tscn
+res://scripts/items/dog.gd
+res://scenes/items/cat.tscn
+res://scripts/items/cat.gd
+res://scenes/UI/MainMenu.tscn

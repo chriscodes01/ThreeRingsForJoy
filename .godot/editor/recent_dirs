@@ -1,3 +1,5 @@
+res://scripts/items
+res://assets/fonts
 res://scenes/UI
 res://scenes/environment
 res://scripts/environment
@@ -7,14 +9,12 @@ E:/GameRepos/HCSSGameJam2024/scripts/items
 E:/GameRepos/HCSSGameJam2024/scripts/environment
 res://scenes/environment/Foliage
 res://assets/player
-res://assets/fonts
 res://scenes
 res://
 res://assets/items
 res://assets/UI
 res://scripts/player
 res://scripts
-res://scripts/items
 res://scenes/items
 C:/Users/Chris/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Visual Studio Code
 res://scenes/player
