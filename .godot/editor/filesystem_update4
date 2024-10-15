@@ -8,3 +8,5 @@ res://scenes/UI/MainMenu.tscn
 res://scenes/environment/BannerTransition.tscn
 res://scenes/environment/CompletionTransition.tscn
 res://scripts/game.gd
+res://scenes/environment/CompletionMap.tscn
+res://scenes/UI/CompletionScreen.tscn

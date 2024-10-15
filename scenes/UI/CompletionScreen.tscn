@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://scripts/player/PlayerCamera.gd" id="3_rdjuq"]
 [ext_resource type="PackedScene" uid="uid://03kfptvy21wh" path="res://scenes/UI/PauseMenu.tscn" id="4_cb1bx"]
 [ext_resource type="AudioStream" uid="uid://db8yihevwvb5y" path="res://assets/audio/CompletionMusic.mp3" id="5_kmcdn"]
+[ext_resource type="PackedScene" uid="uid://co1idcjrvohdf" path="res://scenes/environment/CompletionMap.tscn" id="5_ogjus"]
 [ext_resource type="PackedScene" uid="uid://e74lu177wi27" path="res://scenes/UI/Inventory.tscn" id="5_p3l33"]
-[ext_resource type="PackedScene" uid="uid://b8egjwpuu0o1k" path="res://scenes/environment/Prototype.tscn" id="5_t1twe"]
 
 [node name="CompletionScreen" type="Node2D"]
 process_mode = 3
@@ -43,7 +43,7 @@ scale = Vector2(3.11947, 3.11947)
 
 [node name="Inventory" parent="Player/PlayerCamera/CanvasLayer" instance=ExtResource("5_p3l33")]
 
-[node name="Prototype" parent="." instance=ExtResource("5_t1twe")]
+[node name="CompletionMap" parent="." instance=ExtResource("5_ogjus")]
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_kmcdn")
