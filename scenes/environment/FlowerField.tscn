@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b25nbol0vl2tg"]
+[gd_scene load_steps=17 format=3 uid="uid://b25nbol0vl2tg"]
 
 [ext_resource type="Texture2D" uid="uid://bmikguwd4b78c" path="res://assets/environment/mapTileSet.png" id="1_ykxb1"]
 [ext_resource type="Texture2D" uid="uid://cqotvs5k4gyto" path="res://assets/environment/mapTileSetExtras1.png" id="2_6fa8p"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://hu4m4w88e4ok" path="res://scenes/environment/Foliage/FrontShortTree1.tscn" id="9_o3eav"]
 [ext_resource type="PackedScene" uid="uid://cmncfwdurxg3e" path="res://scenes/environment/Platforms/GrassPlatform1.tscn" id="10_a4wyi"]
 [ext_resource type="PackedScene" uid="uid://mopouatdhl43" path="res://scenes/environment/Platforms/GrassPlatform2.tscn" id="11_geqpf"]
+[ext_resource type="PackedScene" uid="uid://1rft0715chcs" path="res://scenes/items/cat.tscn" id="12_ckhr5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_350to"]
 texture = ExtResource("1_ykxb1")
@@ -17877,3 +17878,8 @@ scale = Vector2(3.70098, 3.70098)
 [node name="GrassPlatform6" parent="Platforms/Group12" instance=ExtResource("11_geqpf")]
 position = Vector2(274, -74)
 scale = Vector2(3.70098, 3.70098)
+
+[node name="DefaultItems" type="Node" parent="."]
+
+[node name="Cat" parent="DefaultItems" instance=ExtResource("12_ckhr5")]
+position = Vector2(-95, -8)
