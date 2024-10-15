@@ -14,8 +14,8 @@ var MAPNAME = null
 var rootScene = null
 const XAXISBUFFER = 100
 const YAXISBUFFER = 150
-const XAXISBUFFERITEMS = 50
-const YAXISBUFFERITEMS = 50
+const XAXISBUFFERITEMS = 100
+const YAXISBUFFERITEMS = 100
 
 func _ready():
 	rootScene = get_tree().get_current_scene()
@@ -61,7 +61,6 @@ func _process(_delta):
 
 func changeMap():
 	pause_timer()
-	print("Entered portal")
 	rootScene = get_tree().get_current_scene()
 	var tileMapList = rootScene.find_children("*", "TileMap")
 	var scene_transition_animation = rootScene.find_child("BannerTransition")
@@ -72,9 +71,8 @@ func changeMap():
 	var currentMap = tileMapList[0]
 	var mapList = MERGEMAP.maps.keys()
 	mapList.erase(currentMap.name)
-	if (currentMap.name != TUTORIALMAP):
-		mapList.erase(TUTORIALMAP)
-	else:
+	mapList.erase(TUTORIALMAP)
+	if (currentMap.name == TUTORIALMAP):
 		GAMEMANAGER.resetInventory()
 	var nextMap = mapList.pick_random()
 	currentMap.free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://butsicj3ve1ik"]
+[gd_scene load_steps=13 format=3 uid="uid://butsicj3ve1ik"]
 
 [ext_resource type="Texture2D" uid="uid://bmikguwd4b78c" path="res://assets/environment/mapTileSet.png" id="1_ym5s5"]
 [ext_resource type="Texture2D" uid="uid://cqotvs5k4gyto" path="res://assets/environment/mapTileSetExtras1.png" id="2_ysxav"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bllm0wkssv1o" path="res://scenes/items/fish.tscn" id="6_mvnw6"]
 [ext_resource type="FontFile" uid="uid://knjiywwyeeoc" path="res://assets/fonts/Shakedown.ttf" id="7_gj4v8"]
 [ext_resource type="PackedScene" uid="uid://bqo5dhmfkb176" path="res://scenes/items/dog.tscn" id="7_lrh40"]
-[ext_resource type="PackedScene" uid="uid://jifl0l07156k" path="res://scenes/environment/temp_next_level_portal.tscn" id="9_4aiip"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_350to"]
 texture = ExtResource("1_ym5s5")
@@ -17932,6 +17931,3 @@ theme_override_font_sizes/font_size = 22
 text = "TUTORIAL LEVEL"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="TempNextLevelPortal" parent="." instance=ExtResource("9_4aiip")]
-position = Vector2(343, -45)
