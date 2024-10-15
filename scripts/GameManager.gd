@@ -15,8 +15,16 @@ func checkCompletion():
 	var kittenCount = itemList["kitten"].count
 	var dogCount = itemList["dog"].count
 	var catCount = itemList["cat"].count
-	#if ((catCount >= 3) && (dogCount >= 3)):
-	if (catCount >= 1):
+	if (
+		(ringCount >= 3)
+		&& (collarCount >= 3)
+		&& (boneCount >= 3)
+		&& (pupCount >= 3)
+		&& (fishCount >= 3)
+		&& (kittenCount >= 3)
+		&& (dogCount >= 3)
+		&& (catCount >= 3)
+	):
 		if (!gameCompleted):
 			gameCompleted = true
 			GAMEMAIN.showCompletionScreen()

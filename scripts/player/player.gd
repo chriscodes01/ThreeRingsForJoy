@@ -353,7 +353,8 @@ func _physics_process(delta):
 	
 	#INFO UI
 	if (openInventory):
-		GAMEMANAGER.checkInventory()
+		GAMEMAIN.showCompletionScreen()
+		#GAMEMANAGER.checkInventory()
 		
 	var currentScene = get_tree().current_scene.name
 	if (pauseInput && currentScene == "Game"):

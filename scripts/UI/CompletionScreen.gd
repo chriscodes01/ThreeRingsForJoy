@@ -4,6 +4,7 @@ const COMPLETIONMUSICSTREAM = "res://assets/audio/CompletionMusic.mp3"
 const CREDITSMUSICSTREAM = "res://assets/audio/credits_music.mp3"
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	playCompletionMusic()
 	var rootScene = get_tree().get_current_scene()
 	var scene_transition_animation = rootScene.find_child("CompletionTransition")
@@ -25,7 +26,7 @@ func _ready():
 func _on_timer_timeout():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	playCreditsMusic()
-	var margin_container = get_tree().get_current_scene().find_child("MarginContainer")
+	var margin_container = get_tree().get_current_scene().find_child("Control")
 	margin_container.visible = true
 	var timer = get_tree().get_current_scene().find_child("Timer")
 	timer.queue_free()

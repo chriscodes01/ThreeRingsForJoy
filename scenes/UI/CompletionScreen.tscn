@@ -82,28 +82,15 @@ text = "THANKS FOR PLAYING!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
-offset_left = -132.0
-offset_top = -203.0
-offset_right = -44.0
-offset_bottom = -150.0
-scale = Vector2(3.19677, 3.19677)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_5qf27")
-theme_override_font_sizes/font_size = 8
-text = "Play Again"
-
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("9_5qf27")
-theme_override_font_sizes/font_size = 8
-text = "Quit"
+[node name="Credits" type="Label" parent="."]
+offset_left = -225.0
+offset_top = -297.0
+offset_right = 229.0
+offset_bottom = -248.0
+theme_override_colors/font_color = Color(0.60933, 0.60933, 0.60933, 1)
+text = "By Chris & Diane Nguyen"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 11.0
@@ -114,6 +101,35 @@ z_index = 2
 position = Vector2(-143, -141)
 scale = Vector2(0.5, 0.5)
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+offset_left = -132.0
+offset_top = -203.0
+offset_right = -44.0
+offset_bottom = -150.0
+scale = Vector2(3.19677, 3.19677)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_5qf27")
+theme_override_font_sizes/font_size = 8
+text = "Play Again"
+
+[node name="Quit" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_5qf27")
+theme_override_font_sizes/font_size = 8
+text = "Quit"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
