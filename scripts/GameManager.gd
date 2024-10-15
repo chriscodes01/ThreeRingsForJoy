@@ -5,12 +5,18 @@ extends Node2D
 const MERGEBY = 3
 var gameCompleted = false
 
-func _process(delta):
+func checkCompletion():
 	var itemList = MERGETREELIST.list
-	var catCount = itemList["cat"].count
+	var ringCount = itemList["ring"].count
+	var collarCount = itemList["collar"].count
+	var boneCount = itemList["bone"].count
+	var pupCount = itemList["pup"].count
+	var fishCount = itemList["fish"].count
+	var kittenCount = itemList["kitten"].count
 	var dogCount = itemList["dog"].count
+	var catCount = itemList["cat"].count
 	#if ((catCount >= 3) && (dogCount >= 3)):
-	if (catCount >= 1 ):
+	if (catCount >= 1):
 		if (!gameCompleted):
 			gameCompleted = true
 			GAMEMAIN.showCompletionScreen()
@@ -28,6 +34,7 @@ func increment_mergeItem(itemName):
 	var levelUp = item["levelUp"]
 	var child = item["child"]
 	item["count"] += 1
+	checkCompletion()
 	var canMerge = true if (item["child"] || item["levelUp"]) else false
 	if (canMerge):
 		determineNextMergePath(item, levelUp, child, item.level)

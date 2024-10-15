@@ -235,35 +235,37 @@ func time_to_string() -> String:
 	return actual_string
 
 func showCompletionScreen():
-	playCompletionMusic()
-	cameraZoomOut()
-	pause_timer()
-	print("Entered portal")
 	rootScene = get_tree().get_current_scene()
 	var tileMapList = rootScene.find_children("*", "TileMap")
 	var scene_transition_animation = rootScene.find_child("CompletionTransition")
 	var animationPlayer = scene_transition_animation.find_child("AnimationPlayer")
 	animationPlayer.play("fade_in")
+	hideGameUI()
+	#cameraZoomOut()
+	pause_timer()
 	hidePlayer()
 	resetPlayer()
-	get_tree().paused = true
-	if (tileMapList.is_empty()):
-		return
-	var currentMap = tileMapList[0]
-	var nextMap = COMPLETIONMAP
-	currentMap.free()
-	hideGameUI()
-	var nextLevelPath = FILE_BEGIN + nextMap + EXTENSION
-	var nextLevel = load(nextLevelPath).instantiate()
-	despawnMergeItems()
-	await get_tree().create_timer(.5).timeout
-	rootScene.add_child(nextLevel, true)
-	nextLevel.set_owner(rootScene)
-	animationPlayer.play("fade_out")
-	await get_tree().create_timer(.5).timeout
-	showPlayer()
-	get_tree().paused = false
-	Input.action_press("jump")
+	#get_tree().paused = true
+	await get_tree().create_timer(2).timeout
+	get_tree().change_scene_to_file("res://scenes/UI/CompletionScreen.tscn")
+	#playCompletionMusic()
+	#animationPlayer.play("fade_in")
+	#if (tileMapList.is_empty()):
+		#return
+	#var currentMap = tileMapList[0]
+	#var nextMap = COMPLETIONMAP
+	#currentMap.free()
+	#var nextLevelPath = FILE_BEGIN + nextMap + EXTENSION
+	#var nextLevel = load(nextLevelPath).instantiate()
+	#despawnMergeItems()
+	#await get_tree().create_timer(.5).timeout
+	##rootScene.add_child(nextLevel, true)
+	##nextLevel.set_owner(rootScene)
+	#animationPlayer.play("fade_out")
+	#await get_tree().create_timer(.5).timeout
+	##showPlayer()
+	#get_tree().paused = false
+	#Input.action_press("jump")
 
 func playCompletionMusic():
 	var musicPlayer = get_tree().get_current_scene().find_child("MusicPlayer")

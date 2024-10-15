@@ -1,27 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://8on7mhejw6yv"]
+[gd_scene load_steps=10 format=3 uid="uid://8on7mhejw6yv"]
 
+[ext_resource type="Script" path="res://scripts/UI/CompletionScreen.gd" id="1_84h6w"]
 [ext_resource type="PackedScene" uid="uid://2awyr1wpho11" path="res://scenes/player/player.tscn" id="2_jlp31"]
 [ext_resource type="Script" path="res://scripts/player/PlayerCamera.gd" id="3_rdjuq"]
-[ext_resource type="PackedScene" uid="uid://03kfptvy21wh" path="res://scenes/UI/PauseMenu.tscn" id="4_cb1bx"]
 [ext_resource type="AudioStream" uid="uid://db8yihevwvb5y" path="res://assets/audio/CompletionMusic.mp3" id="5_kmcdn"]
 [ext_resource type="PackedScene" uid="uid://co1idcjrvohdf" path="res://scenes/environment/CompletionMap.tscn" id="5_ogjus"]
 [ext_resource type="PackedScene" uid="uid://e74lu177wi27" path="res://scenes/UI/Inventory.tscn" id="5_p3l33"]
+[ext_resource type="FontFile" uid="uid://c54dp7n3n64fj" path="res://assets/fonts/KiriFont.ttf" id="8_y0gpt"]
+[ext_resource type="FontFile" uid="uid://knjiywwyeeoc" path="res://assets/fonts/Shakedown.ttf" id="9_5qf27"]
+[ext_resource type="PackedScene" uid="uid://cu3nlw41l2jtg" path="res://scenes/environment/CompletionTransition.tscn" id="10_u70y2"]
 
 [node name="CompletionScreen" type="Node2D"]
 process_mode = 3
+script = ExtResource("1_84h6w")
 
 [node name="Player" type="Node" parent="."]
 process_mode = 3
 
 [node name="Player" parent="Player" instance=ExtResource("2_jlp31")]
 process_mode = 1
-position = Vector2(-16, -27)
+position = Vector2(7, -2)
 collision_layer = 3
 
 [node name="PlayerCamera" type="Camera2D" parent="Player"]
 position = Vector2(-1, -163)
 scale = Vector2(0.235455, 0.0145681)
-anchor_mode = 0
 zoom = Vector2(1.75, 1.75)
 process_callback = 0
 limit_left = -400
@@ -34,19 +37,83 @@ script = ExtResource("3_rdjuq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/PlayerCamera"]
 
-[node name="PauseMenu" parent="Player/PlayerCamera/CanvasLayer" instance=ExtResource("4_cb1bx")]
-process_mode = 3
-visible = false
-offset_left = -124.0
-offset_top = -126.0
-offset_right = -124.0
-offset_bottom = -126.0
-scale = Vector2(3.11947, 3.11947)
-
 [node name="Inventory" parent="Player/PlayerCamera/CanvasLayer" instance=ExtResource("5_p3l33")]
 
 [node name="CompletionMap" parent="." instance=ExtResource("5_ogjus")]
 
-[node name="Music" type="AudioStreamPlayer2D" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_kmcdn")
 autoplay = true
+
+[node name="Title" type="Label" parent="."]
+offset_left = -430.0
+offset_top = -342.0
+offset_right = 26.0
+offset_bottom = -291.0
+scale = Vector2(1.89726, 1.81279)
+theme_override_fonts/font = ExtResource("8_y0gpt")
+theme_override_font_sizes/font_size = 24
+text = "Three Rings for Joy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitleShadow" type="Label" parent="Title"]
+layout_mode = 0
+offset_left = 0.527076
+offset_top = 1.10328
+offset_right = 456.527
+offset_bottom = 52.1033
+scale = Vector2(0.991655, 0.947502)
+theme_override_colors/font_color = Color(0.756863, 0.6, 0, 1)
+theme_override_fonts/font = ExtResource("8_y0gpt")
+theme_override_font_sizes/font_size = 24
+text = "Three Rings for Joy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thanks" type="Label" parent="."]
+visible = false
+offset_left = -226.0
+offset_top = -266.0
+offset_right = 228.0
+offset_bottom = -217.0
+theme_override_colors/font_color = Color(0.60933, 0.60933, 0.60933, 1)
+text = "THANKS FOR PLAYING!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+offset_left = -132.0
+offset_top = -203.0
+offset_right = -44.0
+offset_bottom = -150.0
+scale = Vector2(3.19677, 3.19677)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_5qf27")
+theme_override_font_sizes/font_size = 8
+text = "Play Again"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_5qf27")
+theme_override_font_sizes/font_size = 8
+text = "Quit"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 11.0
+autostart = true
+
+[node name="CompletionTransition" parent="." instance=ExtResource("10_u70y2")]
+z_index = 1
+position = Vector2(-143, -141)
+scale = Vector2(0.5, 0.5)
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

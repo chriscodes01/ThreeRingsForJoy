@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://co1idcjrvohdf"]
+[gd_scene load_steps=19 format=3 uid="uid://co1idcjrvohdf"]
 
 [ext_resource type="Texture2D" uid="uid://bmikguwd4b78c" path="res://assets/environment/mapTileSet.png" id="1_1v8tc"]
 [ext_resource type="Texture2D" uid="uid://cqotvs5k4gyto" path="res://assets/environment/mapTileSetExtras1.png" id="2_agvta"]
@@ -9,6 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://cwbhw8l40vd2u" path="res://scenes/environment/Foliage/FrontYellowFlower1.tscn" id="7_cp3nh"]
 [ext_resource type="PackedScene" uid="uid://dxjmopw67n0aj" path="res://scenes/environment/BoneBowl.tscn" id="8_yxost"]
 [ext_resource type="PackedScene" uid="uid://lusyntw2mu20" path="res://scenes/environment/FishBowl.tscn" id="9_ajk5q"]
+[ext_resource type="Texture2D" uid="uid://dnplcydr3r2op" path="res://assets/environment/dogHouseCatTree.png" id="10_h4j4a"]
+[ext_resource type="PackedScene" uid="uid://1rft0715chcs" path="res://scenes/items/cat.tscn" id="11_330jd"]
+[ext_resource type="PackedScene" uid="uid://wd3ikqvi0pym" path="res://scenes/items/kitten.tscn" id="12_rwssr"]
+[ext_resource type="PackedScene" uid="uid://bqo5dhmfkb176" path="res://scenes/items/dog.tscn" id="13_rcxbs"]
+[ext_resource type="PackedScene" uid="uid://bsrttr186ncrw" path="res://scenes/items/pup.tscn" id="14_yv83a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_350to"]
 texture = ExtResource("1_1v8tc")
@@ -17705,3 +17710,30 @@ position = Vector2(-24, -4)
 
 [node name="FishBowl" parent="DefaultItems" instance=ExtResource("9_ajk5q")]
 position = Vector2(69, -5)
+
+[node name="DogHouse" type="Sprite2D" parent="DefaultItems"]
+position = Vector2(-60, -8)
+scale = Vector2(1.86791, 1.86791)
+texture = ExtResource("10_h4j4a")
+region_enabled = true
+region_rect = Rect2(18, 0, 9, 9)
+
+[node name="CatTree" type="Sprite2D" parent="DefaultItems"]
+position = Vector2(89, -19)
+scale = Vector2(1.86921, 4.30319)
+texture = ExtResource("10_h4j4a")
+region_enabled = true
+region_rect = Rect2(18, 9, 9, 9)
+
+[node name="Cat" parent="DefaultItems" instance=ExtResource("11_330jd")]
+position = Vector2(55, -6)
+
+[node name="Kitten" parent="DefaultItems" instance=ExtResource("12_rwssr")]
+position = Vector2(85, -43)
+
+[node name="Dog" parent="DefaultItems" instance=ExtResource("13_rcxbs")]
+position = Vector2(-40, -8)
+
+[node name="Pup" parent="DefaultItems" instance=ExtResource("14_yv83a")]
+position = Vector2(-61, -2)
+scale = Vector2(0.679357, 0.679357)

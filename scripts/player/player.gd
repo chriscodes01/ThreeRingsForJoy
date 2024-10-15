@@ -355,7 +355,8 @@ func _physics_process(delta):
 	if (openInventory):
 		GAMEMANAGER.checkInventory()
 		
-	if (pauseInput):
+	var currentScene = get_tree().current_scene.name
+	if (pauseInput && currentScene == "Game"):
 		GAMEMAIN.togglePause()
 	
 	

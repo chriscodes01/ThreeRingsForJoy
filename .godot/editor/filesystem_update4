@@ -1,3 +1,7 @@
+res://scenes/environment/CompletionMap.tscn
+res://scenes/UI/CompletionScreen.tscn
+res://scripts/UI/CompletionScreen.gd
+res://scripts/UI/MainMenu.gd
 res://scenes/game.tscn
 res://scenes/UI/PauseMenu.tscn
 res://scenes/UI/Inventory.tscn
@@ -5,12 +9,6 @@ res://scenes/UI/InvSlot.tscn
 res://scenes/environment/FlowerField.tscn
 res://scenes/player/player.tscn
 res://scenes/UI/MainMenu.tscn
-res://scenes/UI/CompletionScreen.tscn
-res://scenes/environment/CompletionMap.tscn
-res://scripts/player/PlayerCamera.gd
 res://scripts/game.gd
-res://scenes/environment/Tutorial.tscn
-res://scenes/environment/Forest.tscn
-res://scenes/environment/Prototype.tscn
-res://scenes/environment/MainMenuScreen.tscn
-res://scripts/environment/MainMenuScreen.gd
+res://scripts/GameManager.gd
+res://scripts/player/player.gd

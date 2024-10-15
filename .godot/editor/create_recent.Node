@@ -1,6 +1,7 @@
+AudioStreamPlayer2D
 Timer
-Node
 Sprite2D
+Node
 CollisionShape2D
 AnimatableBody2D
 TileMap
@@ -10,6 +11,4 @@ Control
 RichTextLabel
 Label
 CanvasLayer
-AudioStreamPlayer2D
 AnimatedSprite2D
-GridContainer
