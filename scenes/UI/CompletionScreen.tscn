@@ -19,13 +19,15 @@ position = Vector2(-16, -27)
 collision_layer = 3
 
 [node name="PlayerCamera" type="Camera2D" parent="Player"]
-position = Vector2(-20, -19)
-zoom = Vector2(2, 2)
+position = Vector2(-1, -163)
+scale = Vector2(0.235455, 0.0145681)
+anchor_mode = 0
+zoom = Vector2(1.75, 1.75)
 process_callback = 0
-limit_left = -825
-limit_top = -900
-limit_right = 825
-limit_bottom = 200
+limit_left = -400
+limit_top = -350
+limit_right = 400
+limit_bottom = 10
 position_smoothing_enabled = true
 editor_draw_limits = true
 script = ExtResource("3_rdjuq")

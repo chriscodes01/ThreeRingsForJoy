@@ -5,8 +5,10 @@ res://scenes/UI/InvSlot.tscn
 res://scenes/environment/FlowerField.tscn
 res://scenes/player/player.tscn
 res://scenes/UI/MainMenu.tscn
-res://scenes/environment/BannerTransition.tscn
-res://scenes/environment/CompletionTransition.tscn
-res://scripts/game.gd
-res://scenes/environment/CompletionMap.tscn
 res://scenes/UI/CompletionScreen.tscn
+res://scenes/environment/CompletionMap.tscn
+res://scripts/player/PlayerCamera.gd
+res://scripts/game.gd
+res://scenes/environment/Tutorial.tscn
+res://scenes/environment/Forest.tscn
+res://scenes/environment/Prototype.tscn

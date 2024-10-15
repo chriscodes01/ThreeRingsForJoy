@@ -22,7 +22,7 @@ func _ready():
 	var tileMapList = rootScene.find_children("*", "TileMap")
 	if (tileMapList.is_empty()):
 		return
-	if (tileMapList[0].name == "MainMenuScreen"):
+	if ((tileMapList[0].name == "MainMenuScreen") || (tileMapList[0].name == "CompletionMap")):
 		return
 	CURRENTMAP = tileMapList[0]
 	MAPNAME = CURRENTMAP.name
@@ -82,14 +82,14 @@ func changeMap():
 	var nextLevelPath = FILE_BEGIN + nextMap + EXTENSION
 	var nextLevel = load(nextLevelPath).instantiate()
 	despawnMergeItems()
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(.5).timeout
 	rootScene.add_child(nextLevel, true)
 	nextLevel.set_owner(rootScene)
 	CURRENTMAP = nextLevel
 	changeViewportLimits()
 	spawnFromMergeMap()
 	animationPlayer.play("fade_out")
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(.5).timeout
 	randomlyMovePlayer()
 	showPlayer()
 	get_tree().paused = false
@@ -112,7 +112,6 @@ func changeViewportLimits():
 	camera.limit_top = top
 	camera.limit_left = left
 	camera.limit_right = right
-	pass
 
 func togglePause():
 	var pause_menu = get_tree().get_current_scene().get_node("Player/PlayerCamera/CanvasLayer/PauseMenu")
@@ -251,25 +250,20 @@ func showCompletionScreen():
 	if (tileMapList.is_empty()):
 		return
 	var currentMap = tileMapList[0]
-	#var mapList = MERGEMAP.maps.keys()
-	#mapList.erase(str(currentMap.name))
 	var nextMap = COMPLETIONMAP
 	currentMap.free()
 	hideGameUI()
 	var nextLevelPath = FILE_BEGIN + nextMap + EXTENSION
 	var nextLevel = load(nextLevelPath).instantiate()
 	despawnMergeItems()
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(.5).timeout
 	rootScene.add_child(nextLevel, true)
 	nextLevel.set_owner(rootScene)
 	animationPlayer.play("fade_out")
-	await get_tree().create_timer(1.2).timeout
-	#randomlyMovePlayer()
+	await get_tree().create_timer(.5).timeout
 	showPlayer()
 	get_tree().paused = false
 	Input.action_press("jump")
-	#MERGEMAP.maps[nextMap].time
-	#start_timer(MERGEMAP.maps[nextMap].time)
 
 func playCompletionMusic():
 	var musicPlayer = get_tree().get_current_scene().find_child("MusicPlayer")
