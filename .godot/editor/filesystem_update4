@@ -12,3 +12,4 @@ res://scripts/game.gd
 res://scenes/environment/Tutorial.tscn
 res://scenes/environment/Forest.tscn
 res://scenes/environment/Prototype.tscn
+res://scenes/environment/MainMenuScreen.tscn

@@ -11,16 +11,20 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -559.0
+offset_top = -536.0
+offset_right = -559.0
+offset_bottom = -536.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f5l1a")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 449.0
-offset_top = 316.0
-offset_right = 513.0
-offset_bottom = 369.0
+offset_left = 428.0
+offset_top = 370.0
+offset_right = 492.0
+offset_bottom = 423.0
 scale = Vector2(4.19284, 4.19284)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -33,6 +37,7 @@ theme_override_font_sizes/font_size = 8
 text = "Play"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_fvmyk")
 theme_override_font_sizes/font_size = 8
@@ -46,17 +51,19 @@ text = "Quit"
 
 [node name="Camera2D" type="Camera2D" parent="MarginContainer"]
 position = Vector2(31, 1.90802)
+scale = Vector2(0.497715, 0.497715)
+zoom = Vector2(1.6, 1.6)
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 158.0
-offset_top = 146.0
-offset_right = 614.0
-offset_bottom = 197.0
+offset_left = 137.0
+offset_top = 200.0
+offset_right = 593.0
+offset_bottom = 251.0
 scale = Vector2(1.89726, 1.81279)
 theme_override_fonts/font = ExtResource("3_mf710")
 theme_override_font_sizes/font_size = 24
-text = "it takes three"
+text = "Three Rings for Joy"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -70,23 +77,25 @@ scale = Vector2(0.991655, 0.947502)
 theme_override_colors/font_color = Color(0.756863, 0.6, 0, 1)
 theme_override_fonts/font = ExtResource("3_mf710")
 theme_override_font_sizes/font_size = 24
-text = "it takes three"
+text = "Three Rings for Joy"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Instructions" type="Label" parent="."]
 layout_mode = 0
-offset_left = 362.0
-offset_top = 222.0
-offset_right = 816.0
-offset_bottom = 271.0
+offset_left = 341.0
+offset_top = 276.0
+offset_right = 795.0
+offset_bottom = 325.0
+theme_override_colors/font_color = Color(0.60933, 0.60933, 0.60933, 1)
 text = "Collect three of each item to complete the game!
 Items can merge - start with three rings and go from there."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MainMenuScreen" parent="." instance=ExtResource("3_ix7ch")]
-position = Vector2(539, 639)
+z_index = -1
+position = Vector2(559, 537)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_4jkfa")
