@@ -109,6 +109,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
 offset_left = -132.0
 offset_top = -203.0
 offset_right = -44.0

@@ -64,6 +64,7 @@ offset_top = 31.0
 offset_right = 127.0
 offset_bottom = 54.0
 scale = Vector2(1.54077, 1.54077)
+theme_override_colors/font_color = Color(0.322704, 0.229784, 0.157765, 1)
 theme_override_fonts/font = ExtResource("7_rqhnd")
 text = "00:00:000"
 script = ExtResource("8_l4w4g")
@@ -73,6 +74,7 @@ offset_left = 8.0
 offset_top = 5.0
 offset_right = 480.0
 offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.321569, 0.231373, 0.156863, 1)
 theme_override_fonts/font = ExtResource("7_rqhnd")
 text = "Hurry! Time left before map switches:"
 

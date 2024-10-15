@@ -28,9 +28,6 @@ func checkCompletion():
 		if (!gameCompleted):
 			gameCompleted = true
 			GAMEMAIN.showCompletionScreen()
-
-func checkInventory():
-	print(MERGETREELIST.list)
 	
 func resetInventory():
 	for item in MERGETREELIST.list:
@@ -66,8 +63,6 @@ func determineNextMergePath(item, levelUp, child, _level):
 		pass
 
 func mergeToNextLevel(nextLevel):
-	# get all items from nextLevel
-	print("Merging to Next Level..." + nextLevel)
 	var baseItemList = []
 	for itemKey in MERGETREELIST.list:
 		var item = MERGETREELIST.list[itemKey]
@@ -79,7 +74,6 @@ func mergeToNextLevel(nextLevel):
 	if (!baseItemList.is_empty()):
 		var chosenBaseItem = baseItemList.pick_random()
 		var chosenBaseItemName = MERGETREELIST.list.find_key(chosenBaseItem)
-		print("Randomly choose... " + chosenBaseItemName)
 		increment_mergeItem(chosenBaseItemName)
 
 #func increment_mergeItem(itemObj):

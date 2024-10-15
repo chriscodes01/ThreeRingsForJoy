@@ -68,7 +68,6 @@ func changeMap():
 	hidePlayer()
 	resetPlayer()
 	animationPlayer.play("fade_in")
-	print("fade in")
 	get_tree().paused = true
 	var currentMap = tileMapList[0]
 	var mapList = MERGEMAP.maps.keys()
@@ -91,7 +90,6 @@ func changeMap():
 	changeViewportLimits()
 	spawnFromMergeMap()
 	animationPlayer.play("fade_out")
-	print("fade out")
 	await get_tree().create_timer(1).timeout
 	randomlyMovePlayer()
 	showPlayer()
