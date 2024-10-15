@@ -17676,8 +17676,8 @@ position = Vector2(-85, -2)
 position = Vector2(-210, -2)
 
 [node name="FrontBigTree1" parent="Foliage" instance=ExtResource("8_snb5p")]
-position = Vector2(-276, 1)
-scale = Vector2(2.72875, 2.72875)
+position = Vector2(-263, -45)
+scale = Vector2(8.36955, 8.36955)
 
 [node name="FrontPinkFlower2" parent="Foliage" instance=ExtResource("5_r6ajf")]
 position = Vector2(309, -26)

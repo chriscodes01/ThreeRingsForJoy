@@ -5,3 +5,5 @@ res://scripts/items/dog.gd
 res://scenes/items/cat.tscn
 res://scripts/items/cat.gd
 res://scenes/UI/MainMenu.tscn
+res://scenes/environment/Tutorial.tscn
+res://scenes/environment/MainMenuScreen.tscn
