@@ -74,6 +74,8 @@ func changeMap():
 	mapList.erase(TUTORIALMAP)
 	if (currentMap.name == TUTORIALMAP):
 		GAMEMANAGER.resetInventory()
+		var teleporter = get_tree().get_current_scene().get_node("TempNextLevelPortal")
+		teleporter.queue_free()
 	var nextMap = mapList.pick_random()
 	currentMap.free()
 	
