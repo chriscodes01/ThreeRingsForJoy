@@ -20,3 +20,4 @@ res://scenes/environment/ForestSmall.tscn
 res://scripts/items/MergeMap.gd
 res://scenes/environment/ConstructionSiteSmall.tscn
 res://scenes/environment/IceField.tscn
+res://scenes/environment/IceFieldSmall.tscn
