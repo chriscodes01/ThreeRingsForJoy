@@ -92,7 +92,7 @@ script = ExtResource("11_smfhw")
 [node name="CompletionTransition" parent="." instance=ExtResource("11_1ifdo")]
 z_index = 15
 position = Vector2(-322, -252)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.75, 0.75)
 script = ExtResource("11_smfhw")
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("8_t3qgq")]

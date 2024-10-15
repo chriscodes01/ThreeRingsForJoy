@@ -17932,17 +17932,18 @@ text = "TUTORIAL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GameLoop" type="Label" parent="Instructions"]
-offset_left = -148.0
-offset_top = -68.0
-offset_right = 484.0
-offset_bottom = -45.0
+[node name="Instructions" type="Label" parent="Instructions"]
+offset_left = -235.0
+offset_top = -69.0
+offset_right = 713.0
+offset_bottom = -30.0
 scale = Vector2(0.53153, 0.53153)
 theme_override_colors/font_color = Color(0.493545, 0.493546, 0.493546, 1)
 theme_override_fonts/font = ExtResource("7_gj4v8")
 theme_override_font_sizes/font_size = 8
 text = "Start by collecting rings. 
-When you have three of any item, it will magically merge to the next item tier."
+When you have three of any item, it will magically merge to the next item.
+Complete the game by getting at least 3 cats and 3 dogs!"
 horizontal_alignment = 1
 
 [node name="NextTierItems" type="Label" parent="Instructions"]

@@ -95,7 +95,7 @@ var maps = {
 		}
 	},
 	"Tutorial": {
-		"time": 30,
+		"time": 60,
 		"mergeItems": {
 			"ring": {
 				"count": 9

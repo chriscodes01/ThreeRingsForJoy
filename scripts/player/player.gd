@@ -353,7 +353,7 @@ func _physics_process(delta):
 	
 	#INFO UI
 	if (openInventory):
-		#GAMEMAIN.showCompletionScreen()
+		GAMEMAIN.showCompletionScreen()
 		pass
 
 		

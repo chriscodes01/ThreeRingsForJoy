@@ -61,7 +61,7 @@ var list = {
 		"origin": "kitten",
 		"count": 0,
 		"parent": "kitten",
-		"child": "fish",
+		"child": "cat",
 		"levelUp": null
 	},
 	"cat": {

@@ -14,3 +14,14 @@ res://scripts/UI/PauseMenu.gd
 res://scripts/UI/OptionsMenu.gd
 res://scripts/game.gd
 res://scripts/GameManager.gd
+res://scenes/game.tscn
+res://scripts/items/MergeTreeList.gd
+res://scenes/environment/Platforms/DirtPlatform1.tscn
+res://scenes/environment/Platforms/DirtPlatform2.tscn
+res://scenes/environment/Platforms/GrassPlatform1.tscn
+res://scenes/environment/Platforms/GrassPlatform2.tscn
+res://scenes/environment/Platforms/IcePlatform1.tscn
+res://scenes/environment/Platforms/IcePlatform2.tscn
+res://scenes/environment/Platforms/TutorialPlatform1.tscn
+res://scenes/UI/CompletionScreen.tscn
+res://scripts/player/player.gd

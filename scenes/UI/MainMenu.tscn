@@ -22,9 +22,9 @@ script = ExtResource("1_f5l1a")
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_left = 428.0
-offset_top = 370.0
+offset_top = 317.0
 offset_right = 492.0
-offset_bottom = 423.0
+offset_bottom = 370.0
 scale = Vector2(4.19284, 4.19284)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -50,7 +50,7 @@ theme_override_font_sizes/font_size = 8
 text = "Quit"
 
 [node name="Camera2D" type="Camera2D" parent="MarginContainer"]
-position = Vector2(31, 1.90802)
+position = Vector2(31.2437, 13.5946)
 scale = Vector2(0.497715, 0.497715)
 zoom = Vector2(1.6, 1.6)
 
@@ -83,22 +83,21 @@ vertical_alignment = 1
 
 [node name="Instructions" type="Label" parent="."]
 layout_mode = 0
-offset_left = 306.0
-offset_top = 276.0
-offset_right = 839.0
-offset_bottom = 351.0
+offset_left = 307.0
+offset_top = 245.0
+offset_right = 840.0
+offset_bottom = 320.0
 theme_override_colors/font_color = Color(0.60933, 0.60933, 0.60933, 1)
-text = "Help us get all our pet stuff back!
-We had three of every thing (we loooove pets)...
-Start by collecting our rings. Merge them together to get the rest!"
+text = "Help us get our three cats and three dogs back (we loooove pets)...
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="InstructionsShadow" type="Label" parent="Instructions"]
-offset_left = 96.0
-offset_right = 629.0
+layout_mode = 0
+offset_left = 170.0
+offset_right = 703.0
 offset_bottom = 75.0
-theme_override_colors/font_color = Color(0.60933, 0.60933, 0.60933, 1)
 text = "loooove
 "
 horizontal_alignment = 1
