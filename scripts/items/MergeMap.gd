@@ -5,7 +5,7 @@ var maps = {
 		"time": 5.0,
 		"mergeItems": {
 			"ring": {
-				"count": 9
+				"count": 3
 			},
 			"collar": {
 				"count": 3
@@ -16,7 +16,7 @@ var maps = {
 		"time": 5.0,
 		"mergeItems": {
 			"ring": {
-				"count": 3
+				"count": 5
 			},
 			"bone": {
 				"count": 1
@@ -47,16 +47,16 @@ var maps = {
 		"time": 15.0,
 		"mergeItems": {
 			"ring": {
-				"count": 6
+				"count": 9
 			},
 			"collar": {
 				"count": 2
 			},
 			"bone": {
-				"count": 1
+				"count": 2
 			},
 			"fish": {
-				"count": 1
+				"count": 2
 			}
 		}
 	},

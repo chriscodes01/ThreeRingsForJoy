@@ -7,3 +7,10 @@ res://scripts/items/cat.gd
 res://scenes/UI/MainMenu.tscn
 res://scenes/environment/Tutorial.tscn
 res://scenes/environment/MainMenuScreen.tscn
+res://scenes/items/bone.tscn
+res://scenes/items/ring.tscn
+res://scripts/items/MergeMap.gd
+res://scripts/UI/PauseMenu.gd
+res://scripts/UI/OptionsMenu.gd
+res://scripts/game.gd
+res://scripts/GameManager.gd

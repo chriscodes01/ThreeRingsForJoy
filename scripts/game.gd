@@ -8,7 +8,6 @@ const EXTENSION = ".tscn"
 const COMPLETIONMAP = "CompletionMap"
 const COMPLETIONMUSICSTREAM = "res://assets/audio/CompletionMusic.mp3"
 const TUTORIALMAP = "Tutorial"
-var rng = RandomNumberGenerator.new()
 var CURRENTMAP = null
 var MAPNAME = null
 var rootScene = null
