@@ -17652,6 +17652,10 @@ scale = Vector2(5.90281, 5.90281)
 position = Vector2(-158, -15)
 scale = Vector2(1.59557, 1.59557)
 
+[node name="FrontBigTree2" parent="Foliage" instance=ExtResource("4_jph2i")]
+position = Vector2(-196, -49)
+scale = Vector2(5.90281, 5.90281)
+
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Group1" type="Node" parent="Platforms"]
@@ -17821,5 +17825,19 @@ scale = Vector2(3.70098, 3.70098)
 [node name="GrassPlatform6" parent="Platforms/Group12" instance=ExtResource("7_edmx0")]
 position = Vector2(274, -74)
 scale = Vector2(3.70098, 3.70098)
+
+[node name="Group13" type="Node" parent="Platforms"]
+
+[node name="GrassPlatform1" parent="Platforms/Group13" instance=ExtResource("6_4a1qa")]
+position = Vector2(93, -105)
+scale = Vector2(3.6957, 3.6957)
+
+[node name="GrassPlatform2" parent="Platforms/Group13" instance=ExtResource("6_4a1qa")]
+position = Vector2(137, -105)
+scale = Vector2(3.6957, 3.6957)
+
+[node name="GrassPlatform3" parent="Platforms/Group13" instance=ExtResource("6_4a1qa")]
+position = Vector2(115, -105)
+scale = Vector2(3.6957, 3.6957)
 
 [node name="DefaultItems" type="Node" parent="."]
