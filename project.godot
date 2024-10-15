@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="HCSSGameJam2024"
+config/name="Three Rings for Joy"
 run/main_scene="res://scenes/UI/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]
@@ -22,6 +23,10 @@ MERGEHELPER="*res://scripts/items/MergeHelper.gd"
 MERGETREELIST="*res://scripts/items/MergeTreeList.gd"
 MERGEMAP="*res://scripts/items/MergeMap.gd"
 GAMEMAIN="*res://scripts/game.gd"
+
+[display]
+
+window/size/resizable=false
 
 [dotnet]
 

@@ -9,4 +9,4 @@ func _physics_process(_delta):
 		if (name == "CompletionTransition"):
 			position = player.position - Vector2(700, 50)
 		else:
-			position = player.position - Vector2(250, 50)
+			position = player.position - Vector2(300, 50)

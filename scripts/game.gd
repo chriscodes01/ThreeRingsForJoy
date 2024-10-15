@@ -103,7 +103,7 @@ func changeViewportLimits():
 	var size = CURRENTMAP.map_to_local(tile_rect.size)
 	var xAxisLengthFromCenter = size[0] / 2 - XAXISBUFFER
 	var yAxis = size[1] - YAXISBUFFER
-	var bottom = 50
+	var bottom = 25
 	var top = -yAxis
 	var left = -xAxisLengthFromCenter
 	var right = xAxisLengthFromCenter

@@ -30,12 +30,21 @@ theme_override_fonts/font = ExtResource("2_1baj4")
 theme_override_font_sizes/font_size = 8
 text = "Resume"
 
+[node name="Return to Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1baj4")
+theme_override_font_sizes/font_size = 8
+text = "Return to Main Menu"
+
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 process_mode = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_1baj4")
 theme_override_font_sizes/font_size = 8
-text = "Quit"
+text = "Quit
+"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Return to Main Menu" to="." method="_on_return_to_main_menu_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

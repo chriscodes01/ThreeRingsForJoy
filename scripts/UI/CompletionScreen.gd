@@ -48,3 +48,6 @@ func _on_play_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+func _on_return_to_main_menu_pressed():
+	get_tree().change_scene_to_file("res://scenes/UI/MainMenu.tscn")

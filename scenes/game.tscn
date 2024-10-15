@@ -50,11 +50,11 @@ script = ExtResource("5_2pdp4")
 [node name="PauseMenu" parent="Player/PlayerCamera/CanvasLayer" instance=ExtResource("4_safpi")]
 process_mode = 3
 visible = false
-offset_left = -124.0
-offset_top = -126.0
-offset_right = -124.0
-offset_bottom = -126.0
-scale = Vector2(3.11947, 3.11947)
+offset_left = 148.0
+offset_top = 126.0
+offset_right = 148.0
+offset_bottom = 126.0
+scale = Vector2(1.30237, 1.30237)
 
 [node name="Inventory" parent="Player/PlayerCamera/CanvasLayer" instance=ExtResource("6_dfgnq")]
 
@@ -86,7 +86,7 @@ process_mode = 1
 [node name="BannerTransition" parent="." instance=ExtResource("8_temm4")]
 z_index = 2
 position = Vector2(-354, -260)
-scale = Vector2(0.38, 0.38)
+scale = Vector2(0.425633, 0.425633)
 script = ExtResource("11_smfhw")
 
 [node name="CompletionTransition" parent="." instance=ExtResource("11_1ifdo")]
