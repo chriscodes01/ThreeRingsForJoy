@@ -5,7 +5,7 @@ var list = {
 		"id": 0,
 		"level": "level1",
 		"origin": "ring",
-		"count": 2,
+		"count": 0,
 		"parent": null,
 		"child": "collar",
 		"levelUp": null
@@ -14,7 +14,7 @@ var list = {
 		"id": 1,
 		"level": "level1",
 		"origin": "ring",
-		"count": 2,
+		"count": 0,
 		"parent": "ring",
 		"child": null,
 		"levelUp": "level2"

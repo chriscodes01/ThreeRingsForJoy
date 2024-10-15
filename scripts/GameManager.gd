@@ -18,11 +18,10 @@ func _process(delta):
 func checkInventory():
 	print(MERGETREELIST.list)
 	
-#func changeMap():
-	#GAMEMAIN.changeMap()
-	#GAMEMAIN.despawnMergeItems()
-	#GAMEMAIN.randomlyMovePlayer()
-	#GAMEMAIN.spawnFromMergeMap()
+func resetInventory():
+	for item in MERGETREELIST.list:
+		var itemObj = MERGETREELIST.list[item]
+		itemObj["count"] = 0
 	
 func increment_mergeItem(itemName):
 	var item = MERGETREELIST.list[itemName]

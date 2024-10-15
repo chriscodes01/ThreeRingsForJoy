@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://gkhgo4bwhgk3"]
+[gd_scene load_steps=15 format=3 uid="uid://gkhgo4bwhgk3"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_27aju"]
 [ext_resource type="PackedScene" uid="uid://2awyr1wpho11" path="res://scenes/player/player.tscn" id="1_uv0vl"]
@@ -6,13 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://03kfptvy21wh" path="res://scenes/UI/PauseMenu.tscn" id="4_safpi"]
 [ext_resource type="Script" path="res://scripts/player/PlayerCamera.gd" id="5_2pdp4"]
 [ext_resource type="PackedScene" uid="uid://e74lu177wi27" path="res://scenes/UI/Inventory.tscn" id="6_dfgnq"]
-[ext_resource type="PackedScene" uid="uid://b8egjwpuu0o1k" path="res://scenes/environment/Prototype.tscn" id="7_jg5c8"]
 [ext_resource type="FontFile" uid="uid://2duvyu4gvm4m" path="res://assets/fonts/PixelOperator8.ttf" id="7_rqhnd"]
 [ext_resource type="Script" path="res://scripts/UI/StopwatchLabel.gd" id="8_l4w4g"]
 [ext_resource type="PackedScene" uid="uid://crukm7jowy8fp" path="res://scenes/environment/FadeTransition.tscn" id="8_t3qgq"]
 [ext_resource type="PackedScene" uid="uid://c8ruaw5a416to" path="res://scenes/environment/BannerTransition.tscn" id="8_temm4"]
+[ext_resource type="PackedScene" path="res://scenes/environment/Tutorial.tscn" id="9_m3gd6"]
 [ext_resource type="PackedScene" uid="uid://cu3nlw41l2jtg" path="res://scenes/environment/CompletionTransition.tscn" id="11_1ifdo"]
 [ext_resource type="AudioStream" uid="uid://c0sutyguphxot" path="res://assets/audio/main_loop_trimmed.mp3" id="11_68m8x"]
+[ext_resource type="Script" path="res://scripts/environment/BannerTransition.gd" id="11_smfhw"]
 
 [node name="Game" type="Node2D"]
 process_mode = 3
@@ -77,13 +78,15 @@ text = "Hurry! Time left before map switches:"
 [node name="SpawnedItems" type="Node" parent="."]
 process_mode = 1
 
-[node name="Prototype" parent="." instance=ExtResource("7_jg5c8")]
+[node name="Tutorial" parent="." instance=ExtResource("9_m3gd6")]
 
 [node name="BannerTransition" parent="." instance=ExtResource("8_temm4")]
 position = Vector2(-603, -415)
+script = ExtResource("11_smfhw")
 
 [node name="CompletionTransition" parent="." instance=ExtResource("11_1ifdo")]
 position = Vector2(-600, -414)
+script = ExtResource("11_smfhw")
 
 [node name="SceneTransitionAnimation" parent="." instance=ExtResource("8_t3qgq")]
 position = Vector2(-398, -218)

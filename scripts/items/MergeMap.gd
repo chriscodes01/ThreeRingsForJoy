@@ -20,21 +20,12 @@ var maps = {
 			}
 		}
 	},
-	"Prototype": {
+	"Tutorial": {
 		"id": 0,
 		"size": "small",\
-		"time": 5.0,
+		"time": 30,
 		"mergeItems": {
 			"ring": {
-				"count": 9
-			},
-			"collar": {
-				"count": 9
-			},
-			"dog": {
-				"count": 9
-			},
-			"cat": {
 				"count": 9
 			}
 		}

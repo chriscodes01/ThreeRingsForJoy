@@ -7,12 +7,15 @@ const FILE_BEGIN = "res://scenes/environment/"
 const EXTENSION = ".tscn"
 const COMPLETIONMAP = "CompletionMap"
 const COMPLETIONMUSICSTREAM = "res://assets/audio/CompletionMusic.mp3"
+const TUTORIALMAP = "Tutorial"
 var rng = RandomNumberGenerator.new()
 var CURRENTMAP = null
 var MAPNAME = null
 var rootScene = null
-const XAXISBUFFER = 200
-const YAXISBUFFER = 275
+const XAXISBUFFER = 100
+const YAXISBUFFER = 150
+const XAXISBUFFERITEMS = 50
+const YAXISBUFFERITEMS = 50
 
 func _ready():
 	rootScene = get_tree().get_current_scene()
@@ -25,6 +28,7 @@ func _ready():
 	MAPNAME = CURRENTMAP.name
 	var map = MERGEMAP.maps[MAPNAME]
 	spawnFromMergeMap()
+	changeViewportLimits()
 	start_timer(map.time)
 	
 func _process(_delta):
@@ -67,7 +71,11 @@ func changeMap():
 	get_tree().paused = true
 	var currentMap = tileMapList[0]
 	var mapList = MERGEMAP.maps.keys()
-	mapList.erase(str(currentMap.name))
+	mapList.erase(currentMap.name)
+	if (currentMap.name != TUTORIALMAP):
+		mapList.erase(TUTORIALMAP)
+	else:
+		GAMEMANAGER.resetInventory()
 	var nextMap = mapList.pick_random()
 	currentMap.free()
 	
@@ -77,30 +85,47 @@ func changeMap():
 	await get_tree().create_timer(1.2).timeout
 	rootScene.add_child(nextLevel, true)
 	nextLevel.set_owner(rootScene)
+	CURRENTMAP = nextLevel
+	changeViewportLimits()
 	spawnFromMergeMap()
 	animationPlayer.play("fade_out")
 	await get_tree().create_timer(1.2).timeout
 	randomlyMovePlayer()
 	showPlayer()
 	get_tree().paused = false
-	#MERGEMAP.maps[nextMap].time
 	start_timer(MERGEMAP.maps[nextMap].time)
 	var tile_rect = CURRENTMAP.get_used_rect()
 	#var topLeft = $Prototype.map_to_local(tile_rect.position)
 	var size = CURRENTMAP.map_to_local(tile_rect.size)
-	print("map size is " + str(size))
+	
+func changeViewportLimits():
+	var tile_rect = CURRENTMAP.get_used_rect()
+	var size = CURRENTMAP.map_to_local(tile_rect.size)
+	var xAxisLengthFromCenter = size[0] / 2 - XAXISBUFFER
+	var yAxis = size[1] - YAXISBUFFER
+	var bottom = 50
+	var top = -yAxis
+	var left = -xAxisLengthFromCenter
+	var right = xAxisLengthFromCenter
+	var camera = get_tree().get_current_scene().get_node("Player/PlayerCamera")
+	camera.limit_bottom = bottom
+	camera.limit_top = top
+	camera.limit_left = left
+	camera.limit_right = right
+	pass
 
 func togglePause():
-	print("togglePause")
 	var pause_menu = get_tree().get_current_scene().get_node("Player/PlayerCamera/CanvasLayer/PauseMenu")
 	if get_tree().paused:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		get_tree().paused = false
 		pause_menu.hide()
+		unpause_timer()
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true
 		pause_menu.show()
+		pause_timer()
 
 func randomlyMovePlayer():
 	if (!rootScene):
@@ -156,6 +181,11 @@ func pause_timer():
 	var current_scene = get_tree().get_current_scene()
 	var timer = current_scene.find_child("MapTimer")
 	timer.paused = true
+	
+func unpause_timer():
+	var current_scene = get_tree().get_current_scene()
+	var timer = current_scene.find_child("MapTimer")
+	timer.paused = false
 
 func _on_timer_timeout():
 	changeMap()
@@ -182,9 +212,9 @@ func randomizeObjectPosition(object):
 	var tile_rect = CURRENTMAP.get_used_rect()
 	#var topLeft = $Prototype.map_to_local(tile_rect.position)
 	var size = CURRENTMAP.map_to_local(tile_rect.size)
-	var xAxisLengthFromCenter = size[0] / 2 - XAXISBUFFER
+	var xAxisLengthFromCenter = size[0] / 2 - XAXISBUFFER - XAXISBUFFERITEMS
 	#var yAxisLengthFromCenter = size[1] / 2 - YAXISBUFFER
-	var yAxis = size[1] - YAXISBUFFER
+	var yAxis = size[1] - YAXISBUFFER - YAXISBUFFERITEMS
 	var leftOrRight = randi_range(0,1)
 	if (leftOrRight == 0):
 		object.position = Vector2(randi_range(10, xAxisLengthFromCenter), randi_range(0, -yAxis))
