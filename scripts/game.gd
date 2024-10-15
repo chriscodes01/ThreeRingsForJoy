@@ -227,11 +227,10 @@ func get_time():
 
 func time_to_string() -> String:
 	var time = get_time()
-	var mili = fmod(time, 1) * 1000
+	var mili = fmod(time, 1) * 100
 	var sec = fmod(time, 60)
-	var min = time / 60
-	var format_string = "%02d : %02d : %02d"
-	var actual_string = format_string % [min, sec, mili]
+	var format_string = "%02d : %02d"
+	var actual_string = format_string % [sec, mili]
 	return actual_string
 
 func showCompletionScreen():
