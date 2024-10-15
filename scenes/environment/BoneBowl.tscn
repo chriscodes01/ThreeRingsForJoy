@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxjmopw67n0aj"]
+
+[ext_resource type="Texture2D" uid="uid://866xdk4t3k50" path="res://assets/environment/bowlAnimations.png" id="1_eueso"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i27an"]
+atlas = ExtResource("1_eueso")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2s5p"]
+atlas = ExtResource("1_eueso")
+region = Rect2(15, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d4ai"]
+atlas = ExtResource("1_eueso")
+region = Rect2(0, 15, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwa07"]
+atlas = ExtResource("1_eueso")
+region = Rect2(15, 15, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnr23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i27an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2s5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d4ai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwa07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ou2v7"]
+size = Vector2(9, 9.5)
+
+[node name="BoneBowl" type="Area2D"]
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_cnr23")
+autoplay = "default"
+frame_progress = 0.26866
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.75)
+shape = SubResource("RectangleShape2D_ou2v7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
