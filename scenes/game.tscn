@@ -47,6 +47,8 @@ script = ExtResource("5_2pdp4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/PlayerCamera"]
 
+[node name="Inventory" parent="Player/PlayerCamera/CanvasLayer" instance=ExtResource("6_dfgnq")]
+
 [node name="PauseMenu" parent="Player/PlayerCamera/CanvasLayer" instance=ExtResource("4_safpi")]
 process_mode = 3
 visible = false
@@ -55,8 +57,6 @@ offset_top = 126.0
 offset_right = 148.0
 offset_bottom = 126.0
 scale = Vector2(1.30237, 1.30237)
-
-[node name="Inventory" parent="Player/PlayerCamera/CanvasLayer" instance=ExtResource("6_dfgnq")]
 
 [node name="StopwatchLabel" type="Label" parent="Player/PlayerCamera/CanvasLayer"]
 offset_left = 9.0

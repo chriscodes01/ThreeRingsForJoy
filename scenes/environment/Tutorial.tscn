@@ -17858,7 +17858,7 @@ scale = Vector2(0.53153, 0.53153)
 theme_override_colors/font_color = Color(0.494118, 0.494118, 0.494118, 1)
 theme_override_fonts/font = ExtResource("7_gj4v8")
 theme_override_font_sizes/font_size = 8
-text = "Press SHIRT/MOUSE CLICK to dash!"
+text = "Press SHIFT/MOUSE CLICK while moving to dash!"
 
 [node name="Latch" type="Label" parent="Instructions"]
 offset_left = -359.0
