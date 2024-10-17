@@ -216,9 +216,9 @@ func randomizeObjectPosition(object):
 	var yAxis = size[1] - YAXISBUFFER - YAXISBUFFERITEMS
 	var leftOrRight = randi_range(0,1)
 	if (leftOrRight == 0):
-		object.position = Vector2(randi_range(10, xAxisLengthFromCenter), randi_range(0, -yAxis))
+		object.position = Vector2(randi_range(10, xAxisLengthFromCenter), randi_range(15, -yAxis))
 	else:
-		object.position = Vector2(randi_range(-xAxisLengthFromCenter, -10), randi_range(0, -yAxis))
+		object.position = Vector2(randi_range(-xAxisLengthFromCenter, -10), randi_range(15, -yAxis))
 
 func get_time():
 	var current_scene = get_tree().get_current_scene()
