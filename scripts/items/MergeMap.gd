@@ -2,7 +2,7 @@ class_name MergeMap extends Node
 
 var maps = {
 	"ForestSmall": {
-		"time": 5.0,
+		"time": 10.0,
 		"mergeItems": {
 			"ring": {
 				"count": 3
@@ -13,7 +13,7 @@ var maps = {
 		}
 	},
 	"IceFieldSmall": {
-		"time": 5.0,
+		"time": 10.0,
 		"mergeItems": {
 			"ring": {
 				"count": 5
@@ -27,7 +27,7 @@ var maps = {
 		}
 	},
 	"ConstructionSiteSmall": {
-		"time": 8.0,
+		"time": 10.0,
 		"mergeItems": {
 			"ring": {
 				"count": 5
@@ -44,7 +44,7 @@ var maps = {
 		}
 	},
 	"FlowerField": {
-		"time": 15.0,
+		"time": 20.0,
 		"mergeItems": {
 			"ring": {
 				"count": 9
@@ -61,7 +61,7 @@ var maps = {
 		}
 	},
 	"Forest": {
-		"time": 15.0,
+		"time": 20.0,
 		"mergeItems": {
 			"ring": {
 				"count": 6
@@ -78,7 +78,7 @@ var maps = {
 		}
 	},
 	"IceField": {
-		"time": 15.0,
+		"time": 20.0,
 		"mergeItems": {
 			"ring": {
 				"count": 6

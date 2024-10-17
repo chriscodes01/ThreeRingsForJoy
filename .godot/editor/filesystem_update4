@@ -1,13 +1,4 @@
-res://scenes/game.tscn
-res://scenes/items/ring.tscn
-res://scenes/environment/Tutorial.tscn
-res://scenes/UI/MainMenu.tscn
 res://scenes/UI/CompletionScreen.tscn
-res://scripts/game.gd
-res://scripts/UI/PauseMenu.gd
-res://scripts/UI/Inventory.gd
-res://scripts/environment/BannerTransition.gd
-res://scenes/environment/FlowerField.tscn
-res://scripts/player/player.gd
-res://scripts/UI/CompletionScreen.gd
-res://scenes/UI/PauseMenu.tscn
+res://scripts/items/MergeMap.gd
+res://scenes/environment/ConstructionSiteSmall.tscn
+res://scenes/environment/ConstructionSiteLarge.tscn
