@@ -3,3 +3,6 @@ res://scripts/items/MergeMap.gd
 res://scenes/environment/ConstructionSiteSmall.tscn
 res://scenes/environment/ConstructionSiteLarge.tscn
 res://scenes/environment/IceFieldSmall.tscn
+res://scenes/environment/Tutorial.tscn
+res://scenes/game.tscn
+res://scripts/game.gd

@@ -43,6 +43,23 @@ var maps = {
 			}
 		}
 	},
+	"ConstructionSiteLarge": {
+		"time": 60.0,
+		"mergeItems": {
+			"ring": {
+				"count": 12
+			},
+			"bone": {
+				"count": 3
+			},
+			"pup": {
+				"count": 3
+			},
+			"kitten": {
+				"count": 3
+			}
+		}
+	},
 	"FlowerField": {
 		"time": 20.0,
 		"mergeItems": {
