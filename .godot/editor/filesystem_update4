@@ -2,3 +2,4 @@ res://scenes/UI/CompletionScreen.tscn
 res://scripts/items/MergeMap.gd
 res://scenes/environment/ConstructionSiteSmall.tscn
 res://scenes/environment/ConstructionSiteLarge.tscn
+res://scenes/environment/IceFieldSmall.tscn
