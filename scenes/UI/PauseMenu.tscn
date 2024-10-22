@@ -39,6 +39,7 @@ text = "Return to Main Menu"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 process_mode = 3
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_1baj4")
 theme_override_font_sizes/font_size = 8

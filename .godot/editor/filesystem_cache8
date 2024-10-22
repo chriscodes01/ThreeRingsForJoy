@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729563445
+::res://::1729563951
 export_presets.cfg::TextFile::-1::1729039827::0::1::::<><>::
 icon.svg::CompressedTexture2D::5901750327720817990::1726544720::1729008018::1::::<><>::
 ::res://assets/::1728953630
@@ -69,7 +69,10 @@ player.png::CompressedTexture2D::3711128758342925253::1728857881::1728857892::1:
 ::res://assets/UI/::1728355475
 inventory-background.png::CompressedTexture2D::8074467843907742625::1728355401::1728355475::1::::<><>::
 inventory-slot.png::CompressedTexture2D::2719434993964114896::1728355439::1728355475::1::::<><>::
-::res://build/::1729039827
+::res://build/::1729563940
+index.apple-touch-icon.png::CompressedTexture2D::851923983825750458::1729563940::1729564564::1::::<><>::
+index.icon.png::CompressedTexture2D::4559066221262019543::1729563940::1729564564::1::::<><>::
+index.png::CompressedTexture2D::512962372663987620::1729563940::1729564564::1::::<><>::
 ::res://scenes/::1729133574
 game.tscn::PackedScene::442213353282934016::1729133574::0::1::::<><>::res://scripts/game.gd<>uid://2awyr1wpho11::::res://scenes/player/player.tscn<>res://scripts/GameManager.gd<>uid://03kfptvy21wh::::res://scenes/UI/PauseMenu.tscn<>res://scripts/player/PlayerCamera.gd<>uid://e74lu177wi27::::res://scenes/UI/Inventory.tscn<>uid://2duvyu4gvm4m::::res://assets/fonts/PixelOperator8.ttf<>res://scripts/UI/StopwatchLabel.gd<>uid://crukm7jowy8fp::::res://scenes/environment/FadeTransition.tscn<>uid://c8ruaw5a416to::::res://scenes/environment/BannerTransition.tscn<>uid://butsicj3ve1ik::::res://scenes/environment/Tutorial.tscn<>uid://cu3nlw41l2jtg::::res://scenes/environment/CompletionTransition.tscn<>uid://c0sutyguphxot::::res://assets/audio/main_loop_trimmed.mp3<>res://scripts/environment/BannerTransition.gd<>uid://jifl0l07156k::::res://scenes/environment/temp_next_level_portal.tscn
 ::res://scenes/environment/::1729134746
@@ -116,13 +119,13 @@ pup.tscn::PackedScene::3686102778546632536::1729003177::0::1::::<><>::res://scri
 ring.tscn::PackedScene::5469873167940487871::1729015632::0::1::::<><>::res://scripts/items/ring.gd<>uid://477lagpo22lr::::res://assets/items/smallItemsTransparent.png<>uid://w1bxo71o37jh::::res://assets/audio/pick_up_sound_trimmed.mp3
 ::res://scenes/player/::1728972407
 player.tscn::PackedScene::1896478345203237934::1728972407::0::1::::<><>::res://scripts/player/player.gd<>uid://bs4x0pg77miyv::::res://assets/player/player.png
-::res://scenes/UI/::1729133574
-CompletionScreen.tscn::PackedScene::2345980236211328961::1729133574::0::1::::<><>::res://scripts/UI/CompletionScreen.gd<>uid://2awyr1wpho11::::res://scenes/player/player.tscn<>res://scripts/player/PlayerCamera.gd<>uid://db8yihevwvb5y::::res://assets/audio/CompletionMusic.mp3<>uid://co1idcjrvohdf::::res://scenes/environment/CompletionMap.tscn<>uid://e74lu177wi27::::res://scenes/UI/Inventory.tscn<>uid://c54dp7n3n64fj::::res://assets/fonts/KiriFont.ttf<>uid://knjiywwyeeoc::::res://assets/fonts/Shakedown.ttf<>uid://cu3nlw41l2jtg::::res://scenes/environment/CompletionTransition.tscn
+::res://scenes/UI/::1729563926
+CompletionScreen.tscn::PackedScene::2345980236211328961::1729563811::0::1::::<><>::res://scripts/UI/CompletionScreen.gd<>uid://2awyr1wpho11::::res://scenes/player/player.tscn<>res://scripts/player/PlayerCamera.gd<>uid://db8yihevwvb5y::::res://assets/audio/CompletionMusic.mp3<>uid://co1idcjrvohdf::::res://scenes/environment/CompletionMap.tscn<>uid://e74lu177wi27::::res://scenes/UI/Inventory.tscn<>uid://c54dp7n3n64fj::::res://assets/fonts/KiriFont.ttf<>uid://knjiywwyeeoc::::res://assets/fonts/Shakedown.ttf<>uid://cu3nlw41l2jtg::::res://scenes/environment/CompletionTransition.tscn
 Inventory.tscn::PackedScene::348596991334712582::1728972318::0::1::::<><>::res://scripts/UI/Inventory.gd<>uid://dnblknna0181j::::res://assets/UI/inventory-background.png<>uid://bqyw6hu05nwul::::res://scenes/UI/InvSlot.tscn
 InvSlot.tscn::PackedScene::3560378781187019891::1728972318::0::1::::<><>::uid://be0kxx1krwg3a::::res://assets/UI/inventory-slot.png<>res://scripts/UI/InvSlot.gd<>uid://2duvyu4gvm4m::::res://assets/fonts/PixelOperator8.ttf
-MainMenu.tscn::PackedScene::8946410643434102418::1729015633::0::1::::<><>::res://scripts/UI/MainMenu.gd<>uid://knjiywwyeeoc::::res://assets/fonts/Shakedown.ttf<>uid://dxju3lhjrsb44::::res://scenes/environment/MainMenuScreen.tscn<>uid://c54dp7n3n64fj::::res://assets/fonts/KiriFont.ttf<>uid://cj0im5ssgascc::::res://assets/audio/menu_music_trimmed.mp3
+MainMenu.tscn::PackedScene::8946410643434102418::1729563926::0::1::::<><>::res://scripts/UI/MainMenu.gd<>uid://knjiywwyeeoc::::res://assets/fonts/Shakedown.ttf<>uid://dxju3lhjrsb44::::res://scenes/environment/MainMenuScreen.tscn<>uid://c54dp7n3n64fj::::res://assets/fonts/KiriFont.ttf<>uid://cj0im5ssgascc::::res://assets/audio/menu_music_trimmed.mp3
 OptionsMenu.tscn::PackedScene::2786256432021944198::1728617194::0::1::::<><>::res://scripts/UI/OptionsMenu.gd<>uid://knjiywwyeeoc::::res://assets/fonts/Shakedown.ttf
-PauseMenu.tscn::PackedScene::1813140585150516499::1729015907::0::1::::<><>::res://scripts/UI/PauseMenu.gd<>uid://knjiywwyeeoc::::res://assets/fonts/Shakedown.ttf
+PauseMenu.tscn::PackedScene::1813140585150516499::1729563816::0::1::::<><>::res://scripts/UI/PauseMenu.gd<>uid://knjiywwyeeoc::::res://assets/fonts/Shakedown.ttf
 ::res://scripts/::1729133561
 game.gd::GDScript::-1::1729133561::0::1::::<>Node2D<>::
 GameManager.gd::GDScript::-1::1729007066::0::1::::<>Node2D<>::
